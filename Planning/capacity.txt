@@ -1,0 +1,1 @@
+A quad core machine(Physical Machine or VM) having 4 GB RAM and 500 GB HDD for pilot build/CI server setup.
