@@ -1,0 +1,80 @@
+#! /bin/sh
+
+DATE=`date +%d_%m_%Y`
+TIME=`date +%H_%M_%S`
+
+MODULE=$1
+TASK_ID=$2
+
+UAT_DIR="/c/UAT_Deployments"
+DEST_DIR=$UAT_DIR/$DATE/$MODULE\_$TASK_ID/UATSub1
+
+#echo
+#echo "Verify"
+#echo =========
+#echo
+
+echo $MODULE
+echo
+
+cd $TASK_ID
+pwd
+echo
+
+#echo >> $TASK_ID.sha
+#echo "SHA: WAR files" >> $TASK_ID.sha
+#echo ================= >> $TASK_ID.sha
+#echo >> $TASK_ID.sha
+
+cat readme.txt | grep $MODULE 
+echo
+
+
+for string in `cat readme.txt | grep $MODULE`
+do
+
+	echo 
+	echo string: $string
+
+
+	if [[ $string == *"WEB-INF"* ]]; then
+		#echo $string
+		echo $string | sed 's/.*WEB-INF/WEB-INF/'
+	else
+		echo $string | sed -r "s/.*$MODULE?\//\//"
+		#echo $string
+	fi
+
+done
+
+exit
+
+if [[ $string == *"My long"* ]]
+then
+  cat readme.txt | grep $MODULE | sed -r "s/.*$MODULE?\//\//"
+fi
+
+cat readme.txt | grep $MODULE | sed -r "s/.*$MODULE?\//\//"
+
+exit
+
+for i in `cat readme.txt | grep $MODULE | sed -r "s/.*$MODULE\///"`
+do
+	echo
+	echo $i
+
+	echo "jar -xvf $DEST_DIR/$MODULE.war $i | uniq "
+	jar -xvf $DEST_DIR/$MODULE.war $i | uniq 
+	file=`jar -xvf $DEST_DIR/$MODULE.war $i | uniq | cut -d" " -f3`
+	md5sum $file
+	#md5sum $file >> $TASK_ID.sha
+done
+
+exit
+
+echo 
+echo 
+echo ==================================================================== 
+echo 
+
+#cat $TASK_ID.sha
