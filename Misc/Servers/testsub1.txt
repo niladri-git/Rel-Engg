@@ -1,0 +1,76 @@
+[root@testsub1 /]# ifconfig
+eth0      Link encap:Ethernet  HWaddr 32:36:E3:12:0F:7D
+          inet addr:192.168.89.247  Bcast:192.168.89.255  Mask:255.255.255.0
+          inet6 addr: fe80::3036:e3ff:fe12:f7d/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:1226445 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:923959 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000
+          RX bytes:263073133 (250.8 MiB)  TX bytes:240046948 (228.9 MiB)
+
+lo        Link encap:Local Loopback
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:16436  Metric:1
+          RX packets:79339622 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:79339622 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0
+          RX bytes:17380407287 (16.1 GiB)  TX bytes:17380407287 (16.1 GiB)
+
+[root@testsub1 /]# pwd
+/
+
+[root@testsub1 /]# du -sh *
+7.7M    bin
+24M     boot
+668M    dev
+104M    etc
+9.3G    home
+3.6G    i-admin
+325M    lib
+26M     lib64
+223M    log
+16K     lost+found
+8.0K    media
+8.0K    misc
+12K     mnt
+8.0K    opt
+0       proc
+731M    root
+35M     sbin
+592K    scripts
+20K     scripts.tgz
+8.0K    selinux
+464K    sql
+8.0K    srv
+0       sys
+52K     tmp
+18G     u01
+244M    upload
+35G     usr
+108M    var
+
+[root@testsub1 home]# pwd
+/home
+
+[root@testsub1 home]# du -sh *
+384K    andy
+6.0G    bajpai
+1.2M    debasis
+2.1M    eliott
+1.1M    hepburn
+304M    huishan
+33M     jeferi
+40K     lixia
+2.0G    nandakumar
+836M    niladri
+36K     rsyncseal
+400K    sashank
+3.2M    sianghui
+150M    subha
+36K     sutrisno
+3.9M    tomcat
+32K     vinay
+66M     vinaychandra
+
++++

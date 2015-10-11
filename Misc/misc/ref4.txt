@@ -1,0 +1,36 @@
+2 topics:
+=======
+1) etaxchn module in Test server (only testsub1) 
+
+2) epayslip module Priya Katam,  test server it was not working...
+troubleshoot...
+
+
+2) war file deployment:
+===============================
+epayslip.war supplied by SWD team, 2 versions of war file...
+- uatsub1 
+- uatsub3
+
+war file deployment project ==> status: in-progress on testing server (UAT).
+
+- Production server
+- UAT server (pre-production) === war file deployment  for some modules ONLY... not ALL modules...
+- BLR testing server (testsub1, testsub3..)
+
+uatsub2 === einstruction== 
+
+Andy & Sutrisno's requirement:   before we can proceed to go live,  need to ensure war file deployment to be error-free.
+
+ground-base  that procedure is following strictly.... so assurity can be achieved
+
+
+1) SWD will supply war file
+2) OktaRack team will upload this war file to Designated server...
+- clear tomcat/work/epayslip/ directory before NEW war file deploy...
+- upload war file....
+- restart tomcat twice..... first restart, it builds from war file, and extract...
+    second restart, is for tomcat to compile and run....
+
+
+

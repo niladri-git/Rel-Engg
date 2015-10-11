@@ -1,0 +1,51 @@
+http://192.168.89.227:8080/alfresco/
+
+- niladri
+  iadmin123
+
+http://192.168.89.227:8080/alfresco/faces/jsp/login.jsp
+
+bangI-admin
+
+http://192.168.89.227:8080/share/page/
+
++++
+
+http://192.168.89.228:3343/csvn/
+
+bangI-admin
+
+http://192.168.89.227:8080/share/
+http://192.168.89.227:8080/alfresco/
+http://192.168.89.228:18080/svn/ehr/trunk
+
+http://192.168.89.228:18080/svn/ehr/trunk13:03
+
+- niladri
+svn123
+
++++
+
+IE proxy
+
+192.168.89.244:8888
+
++++
+
+https://i-admin.epayslip.com/mainlogin/index.jsp
+
+niladri
+iadmin@123
+
++++
+
+
+
+
+
+
+
+
+Lap
+
+- iadmin@123

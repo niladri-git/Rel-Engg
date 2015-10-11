@@ -1,0 +1,224 @@
+[root@testsub1 eclaim]# find /usr/local/tomcat/ -type f -name "*.xml" -exec grep ehr_mjngz {} \; -print
+
+<name>ehr_mjngz</name>
+/usr/local/tomcat/webapps/reportadmin2/WEB-INF/classes/config_datasource.xml
+
+<name>ehr_mjngz</name>
+/usr/local/tomcat/webapps/reportadmin2/WEB-INF/src/config_datasource.xml
+
+<name>ehr_mjngz</name>
+/usr/local/tomcat/webapps/calendar/WEB-INF/classes/config_datasource.xml
+
+<name>ehr_mjngz</name>
+/usr/local/tomcat/webapps/calendar/WEB-INF/src/config_datasource.xml
+
+                <name>ehr_mjngz</name>
+/usr/local/tomcat/webapps/reportadmin/WEB-INF/classes/config_datasource.xml
+
+                <name>ehr_mjngz</name>
+/usr/local/tomcat/webapps/reportadmin/WEB-INF/src/config_datasource.xml
+
+<name>ehr_mjngz</name>
+/usr/local/tomcat/webapps/remoteuser2/WEB-INF/classes/config_datasource.xml
+
+<name>ehr_mjngz</name>
+/usr/local/tomcat/webapps/remoteuser2/WEB-INF/src/config_datasource.xml
+
+<name>ehr_mjngz</name>
+/usr/local/tomcat/webapps/leave/WEB-INF/classes/config_datasource.xml
+
+<name>ehr_mjngz</name>
+/usr/local/tomcat/webapps/leave/WEB-INF/src/config_datasource.xml
+
+<name>ehr_mjngz</name>
+/usr/local/tomcat/webapps/portal_prd/WEB-INF/classes/config_datasource.xml
+
+<name>ehr_mjngz</name>
+/usr/local/tomcat/webapps/portal_prd/WEB-INF/src/config_datasource.xml
+
+<name>ehr_mjngz</name>
+/usr/local/tomcat/webapps/leave-29Jan2015/WEB-INF/classes/config_datasource.xml
+
+<name>ehr_mjngz</name>
+/usr/local/tomcat/webapps/hris2/WEB-INF/classes/config_datasource.xml
+
+<name>ehr_mjngz</name>
+/usr/local/tomcat/webapps/hris2/WEB-INF/src/config_datasource.xml
+
+<name>ehr_mjngz</name>
+/usr/local/tomcat/webapps/etemplate/WEB-INF/classes/config_datasource.xml
+
+<name>ehr_mjngz</name>
+/usr/local/tomcat/webapps/etemplate/WEB-INF/src/config_datasource.xml
+
+<name>ehr_mjngz</name>
+/usr/local/tomcat/webapps/leave2/WEB-INF/classes/config_datasource.xml
+
+<name>ehr_mjngz</name>
+/usr/local/tomcat/webapps/leave2/WEB-INF/src/config_datasource.xml
+
+<name>ehr_mjngz</name>
+/usr/local/tomcat/webapps/portal_bak/WEB-INF/classes/config_datasource.xml
+
+<name>ehr_mjngz</name>
+/usr/local/tomcat/webapps/portal_bak/WEB-INF/src/config_datasource.xml
+
+<name>ehr_mjngz</name>
+/usr/local/tomcat/webapps/epayslip/WEB-INF/classes/config_datasource.xml
+
+<name>ehr_mjngz</name>
+/usr/local/tomcat/webapps/epayslip/WEB-INF/src/config_datasource.xml
+
+<name>ehr_mjngz</name>
+/usr/local/tomcat/webapps/epayroll/WEB-INF/classes/config_datasource.xml
+
+<name>ehr_mjngz</name>
+/usr/local/tomcat/webapps/epayroll/WEB-INF/src/config_datasource.xml
+
+<name>ehr_mjngz</name>
+/usr/local/tomcat/webapps/epayroll/WEB-INF/classes_epayroll/config_datasource.xml
+
+<name>ehr_mjngz</name>
+/usr/local/tomcat/webapps/oldeleave/WEB-INF/classes/config_datasource.xml
+
+<name>ehr_mjngz</name>
+/usr/local/tomcat/webapps/oldeleave/WEB-INF/src/config_datasource.xml
+
+<name>ehr_mjngz</name>
+/usr/local/tomcat/webapps/user/WEB-INF/classes/config_datasource.xml
+
+<name>ehr_mjngz</name>
+/usr/local/tomcat/webapps/user/WEB-INF/src/config_datasource.xml
+
+<name>ehr_mjngz</name>
+/usr/local/tomcat/webapps/user2/WEB-INF/classes/config_datasource.xml
+
+<name>ehr_mjngz</name>
+/usr/local/tomcat/webapps/user2/WEB-INF/src/config_datasource.xml
+
+<name>ehr_mjngz</name>
+/usr/local/tomcat/webapps/epayroll2/epayroll/WEB-INF/classes/config_datasource.xml
+
+<name>ehr_mjngz</name>
+/usr/local/tomcat/webapps/epayroll2/WEB-INF/classes/config_datasource.xml
+
+<name>ehr_mjngz</name>
+/usr/local/tomcat/webapps/epayroll2/WEB-INF/src/config_datasource.xml
+
+<name>ehr_mjngz</name>
+/usr/local/tomcat/webapps/remoteuser/WEB-INF/classes/config_datasource.xml
+
+<name>ehr_mjngz</name>
+/usr/local/tomcat/webapps/remoteuser/WEB-INF/src/config_datasource.xml
+
+<name>ehr_mjngz</name>
+/usr/local/tomcat/webapps/leave-27Jan2015-withYOS/WEB-INF/classes/config_datasource.xml
+
+<name>ehr_mjngz</name>
+/usr/local/tomcat/webapps/leave-27Jan2015-withYOS/WEB-INF/src/config_datasource.xml
+
+<name>ehr_mjngz</name>
+/usr/local/tomcat/webapps/epayslip2/WEB-INF/classes/config_datasource.xml
+
+<name>ehr_mjngz</name>
+/usr/local/tomcat/webapps/epayslip2/WEB-INF/src/config_datasource.xml
+
+<name>ehr_mjngz</name>
+/usr/local/tomcat/webapps/portal2/WEB-INF/classes/config_datasource.xml
+
+<name>ehr_mjngz</name>
+/usr/local/tomcat/webapps/portal2/WEB-INF/src/config_datasource.xml
+
+<name>ehr_mjngz</name>
+/usr/local/tomcat/webapps/hris/WEB-INF/classes/config_datasource.xml
+
+<name>ehr_mjngz</name>
+/usr/local/tomcat/webapps/hris/WEB-INF/src/config_datasource.xml
+
+                global="ehr_mjngz"
+                name="ehr_mjngz"
+/usr/local/tomcat/conf/context.xml
+
+                name="ehr_mjngz"
+                user="ehr_mjngz"
+                password="ehr_mjngzqwsa"
+/usr/local/tomcat/conf/server.xml
+
+[root@testsub1 eclaim]#
+
+[root@testsub1 eclaim]# find /usr/local/tomcat/ -type f -name "*.xml" -exec grep ehr_bat1cn {} \; -print
+
+<name>ehr_bat1cn</name>
+/usr/local/tomcat/webapps/reportadmin2/WEB-INF/classes/config_datasource.xml
+<name>ehr_bat1cn</name>
+/usr/local/tomcat/webapps/reportadmin2/WEB-INF/src/config_datasource.xml
+                <name>ehr_bat1cn</name>
+/usr/local/tomcat/webapps/reportadmin/WEB-INF/classes/config_datasource.xml
+                <name>ehr_bat1cn</name>
+/usr/local/tomcat/webapps/reportadmin/WEB-INF/src/config_datasource.xml
+<name>ehr_bat1cn</name>
+/usr/local/tomcat/webapps/remoteuser2/WEB-INF/classes/config_datasource.xml
+<name>ehr_bat1cn</name>
+/usr/local/tomcat/webapps/remoteuser2/WEB-INF/src/config_datasource.xml
+     <name>ehr_bat1cn</name>
+/usr/local/tomcat/webapps/etimesheet2/WEB-INF/classes/config_datasource.xml
+     <name>ehr_bat1cn</name>
+/usr/local/tomcat/webapps/etimesheet2/WEB-INF/src/config_datasource.xml
+<name>ehr_bat1cn</name>
+/usr/local/tomcat/webapps/hris2/WEB-INF/classes/config_datasource.xml
+<name>ehr_bat1cn</name>
+/usr/local/tomcat/webapps/hris2/WEB-INF/src/config_datasource.xml
+<name>ehr_bat1cn</name>
+/usr/local/tomcat/webapps/etemplate/WEB-INF/classes/config_datasource.xml
+<name>ehr_bat1cn</name>
+/usr/local/tomcat/webapps/etemplate/WEB-INF/src/config_datasource.xml
+<name>ehr_bat1cn</name>
+/usr/local/tomcat/webapps/epayslip/WEB-INF/classes/config_datasource.xml
+<name>ehr_bat1cn</name>
+/usr/local/tomcat/webapps/epayslip/WEB-INF/src/config_datasource.xml
+<name>ehr_bat1cn</name>
+/usr/local/tomcat/webapps/epayroll/WEB-INF/classes/config_datasource.xml
+<name>ehr_bat1cn</name>
+/usr/local/tomcat/webapps/epayroll/WEB-INF/src/config_datasource.xml
+<name>ehr_bat1cn</name>
+/usr/local/tomcat/webapps/epayroll/WEB-INF/classes_epayroll/config_datasource.xml
+     <name>ehr_bat1cn</name>
+/usr/local/tomcat/webapps/etimesheet/WEB-INF/classes/config_datasource.xml
+     <name>ehr_bat1cn</name>
+/usr/local/tomcat/webapps/etimesheet/WEB-INF/src/config_datasource.xml
+<name>ehr_bat1cn</name>
+/usr/local/tomcat/webapps/user/WEB-INF/classes/config_datasource.xml
+<name>ehr_bat1cn</name>
+/usr/local/tomcat/webapps/user/WEB-INF/src/config_datasource.xml
+<name>ehr_bat1cn</name>
+/usr/local/tomcat/webapps/user2/WEB-INF/classes/config_datasource.xml
+<name>ehr_bat1cn</name>
+/usr/local/tomcat/webapps/user2/WEB-INF/src/config_datasource.xml
+<name>ehr_bat1cn</name>
+/usr/local/tomcat/webapps/epayroll2/epayroll/WEB-INF/classes/config_datasource.xml
+<name>ehr_bat1cn</name>
+/usr/local/tomcat/webapps/epayroll2/WEB-INF/classes/config_datasource.xml
+<name>ehr_bat1cn</name>
+/usr/local/tomcat/webapps/epayroll2/WEB-INF/src/config_datasource.xml
+<name>ehr_bat1cn</name>
+/usr/local/tomcat/webapps/remoteuser/WEB-INF/classes/config_datasource.xml
+<name>ehr_bat1cn</name>
+/usr/local/tomcat/webapps/remoteuser/WEB-INF/src/config_datasource.xml
+<name>ehr_bat1cn</name>
+/usr/local/tomcat/webapps/epayslip2/WEB-INF/classes/config_datasource.xml
+<name>ehr_bat1cn</name>
+/usr/local/tomcat/webapps/epayslip2/WEB-INF/src/config_datasource.xml
+<name>ehr_bat1cn</name>
+/usr/local/tomcat/webapps/hris/WEB-INF/classes/config_datasource.xml
+<name>ehr_bat1cn</name>
+/usr/local/tomcat/webapps/hris/WEB-INF/src/config_datasource.xml
+                global="ehr_bat1cn"
+                name="ehr_bat1cn"
+/usr/local/tomcat/conf/context.xml
+                name="ehr_bat1cn"
+                user="ehr_bat1cn"
+                password="ehr_bat1cnqwsa"
+/usr/local/tomcat/conf/server.xml
+
+[root@testsub1 eclaim]#
+

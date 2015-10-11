@@ -1,0 +1,239 @@
+	<name>ehr_verticurlin</name>
+	<name>epayroll_verticurlin</name>
+	<name>etemplate_verticurlin</name>
+/usr/local/tomcat/webapps/portal/WEB-INF/src/config_datasource.xml
+
+	<name>ehr_verticurlin</name>
+	<name>epayroll_verticurlin</name>
+/usr/local/tomcat/webapps/hris/WEB-INF/src/config_datasource.xml
+
+                global="ehr_verticurlin"
+                name="ehr_verticurlin"
+                global="epayroll_verticurlin"
+                name="epayroll_verticurlin"
+/usr/local/tomcat/conf/context.xml
+
+                name="ehr_verticurlin"
+                user="ehr_verticurlin"
+                password="ehr_verticurlin"
+                name="epayroll_verticurlin"
+                user="epayroll_verticurlin"
+                password="epayroll_verticurlin"
+/usr/local/tomcat/conf/server.xml
+
++++
+
+[root@testsub1 ~]# find /usr/local/tomcat/ -type f -name "*.xml" -exec grep ehr_visash  {} \; -print
+
+        <name>ehr_visash</name>
+/usr/local/tomcat/webapps/calendar/WEB-INF/classes/config_datasource.xml
+
+                <name>ehr_visash</name>
+/usr/local/tomcat/webapps/reportadmin/WEB-INF/classes/config_datasource.xml
+
+                <name>ehr_visash</name>
+/usr/local/tomcat/webapps/reportadmin/WEB-INF/src/config_datasource.xml
+
+        <name>ehr_visash</name>
+/usr/local/tomcat/webapps/etemplate/WEB-INF/classes/config_datasource.xml
+
+        <name>ehr_visash</name>
+/usr/local/tomcat/webapps/epayslip/WEB-INF/src/config_datasource.xml
+
+        <name>ehr_visash</name>
+/usr/local/tomcat/webapps/epayroll/WEB-INF/classes/config_datasource.xml
+
+        <name>ehr_visash</name>
+/usr/local/tomcat/webapps/epayroll/WEB-INF/src/config_datasource.xml
+
+        <name>ehr_visash</name>
+/usr/local/tomcat/webapps/user/WEB-INF/classes/config_datasource.xml
+
+        <name>ehr_visash</name>
+/usr/local/tomcat/webapps/hris/WEB-INF/classes/config_datasource.xml
+
+        <name>ehr_visash</name>
+/usr/local/tomcat/webapps/hris/WEB-INF/src/config_datasource.xml
+
+                global="ehr_visash"
+                name="ehr_visash"
+/usr/local/tomcat/conf/context.xml
+
+                name="ehr_visash"
+                user="ehr_visash"
+                password="ehr_visashqwsa"
+/usr/local/tomcat/conf/server.xml
+
++++
+
+[root@testsub1 ~]# find /usr/local/tomcat/ -type f -name "*.xml" -exec grep epayroll_visash  {} \; -print
+
+                <name>epayroll_visash</name>
+/usr/local/tomcat/webapps/reportadmin/WEB-INF/classes/config_datasource.xml
+
+                <name>epayroll_visash</name>
+/usr/local/tomcat/webapps/reportadmin/WEB-INF/src/config_datasource.xml
+
+        <name>epayroll_visash</name>
+/usr/local/tomcat/webapps/etemplate/WEB-INF/classes/config_datasource.xml
+
+        <name>epayroll_visash</name>
+/usr/local/tomcat/webapps/epayslip/WEB-INF/classes/config_datasource.xml
+
+        <name>epayroll_visash</name>
+/usr/local/tomcat/webapps/epayslip/WEB-INF/src/config_datasource.xml
+
+        <name>epayroll_visash</name>
+/usr/local/tomcat/webapps/epayroll/WEB-INF/classes/config_datasource.xml
+
+        <name>epayroll_visash</name>
+/usr/local/tomcat/webapps/epayroll/WEB-INF/src/config_datasource.xml
+
+        <name>epayroll_visash</name>
+/usr/local/tomcat/webapps/user/WEB-INF/classes/config_datasource.xml
+
+        <name>epayroll_visash</name>
+/usr/local/tomcat/webapps/hris/WEB-INF/classes/config_datasource.xml
+
+        <name>epayroll_visash</name>
+/usr/local/tomcat/webapps/hris/WEB-INF/src/config_datasource.xml
+
+                global="epayroll_visash"
+                name="epayroll_visash"
+/usr/local/tomcat/conf/context.xml
+
+                name="epayroll_visash"
+                user="epayroll_visash"
+                password="epayroll_visashqwsa"
+/usr/local/tomcat/conf/server.xml
+
++++
+
+[root@testsub1 ~]# find /usr/local/tomcat/ -type f -name "*.xml" -exec grep ehr_verticurlin  {} \; -
+
+        <name>ehr_verticurlin</name>
+/usr/local/tomcat/webapps/calendar/WEB-INF/classes/config_datasource.xml
+
+        <name>ehr_verticurlin</name>
+/usr/local/tomcat/webapps/etemplate/WEB-INF/classes/config_datasource.xml
+
+	<name>ehr_verticurlin</name>
+/usr/local/tomcat/webapps/portal/WEB-INF/src/config_datasource.xml
+
+        <name>ehr_verticurlin</name>
+/usr/local/tomcat/webapps/epayslip/WEB-INF/classes/config_datasource.xml
+
+        <name>ehr_verticurlin</name>
+/usr/local/tomcat/webapps/epayroll/WEB-INF/classes/config_datasource.xml
+
+        <name>ehr_verticurlin</name>
+/usr/local/tomcat/webapps/user/WEB-INF/classes/config_datasource.xml
+
+        <name>ehr_verticurlin</name>
+/usr/local/tomcat/webapps/hris/WEB-INF/classes/config_datasource.xml
+
+                global="ehr_verticurlin"
+                name="ehr_verticurlin"
+/usr/local/tomcat/conf/context.xml
+
+                name="ehr_verticurlin"
+                user="ehr_verticurlin"
+                password="ehr_verticurlinqwsa"
+/usr/local/tomcat/conf/server.xml
+
++++
+
+[root@testsub1 ~]# find /usr/local/tomcat/ -type f -name "*.xml" -exec grep epayroll_verticurlin  {} \; -print
+
+        <name>epayroll_verticurlin</name>
+/usr/local/tomcat/webapps/etemplate/WEB-INF/classes/config_datasource.xml
+
+	<name>epayroll_verticurlin</name>
+/usr/local/tomcat/webapps/portal/WEB-INF/src/config_datasource.xml
+
+        <name>epayroll_verticurlin</name>
+/usr/local/tomcat/webapps/epayslip/WEB-INF/classes/config_datasource.xml
+
+        <name>epayroll_verticurlin</name>
+/usr/local/tomcat/webapps/epayroll/WEB-INF/classes/config_datasource.xml
+
+        <name>epayroll_verticurlin</name>
+/usr/local/tomcat/webapps/user/WEB-INF/classes/config_datasource.xml
+
+        <name>epayroll_verticurlin</name>
+/usr/local/tomcat/webapps/hris/WEB-INF/classes/config_datasource.xml
+
+                global="epayroll_verticurlin"
+                name="epayroll_verticurlin"
+/usr/local/tomcat/conf/context.xml
+
+                name="epayroll_verticurlin"
+                user="epayroll_verticurlin"
+                password="epayroll_verticurlinqwsa"
+/usr/local/tomcat/conf/server.xml
+
++++
+
+  813  cd conf
+  814  vi server.xml
+  
+  815  sudo find /usr/local/tomcat/ -type f -name "*.xml" -exec grep visash {} \; -print | less
+  
+  817  cd webapps/
+  818  vi hris/WEB-INF/classes/config_datasource.xml
+  819  vi epayroll/WEB-INF/classes/config_datasource.xml
+  820  vi epayslip/WEB-INF/classes/config_datasource.xml
+  821  vi reportadmin/WEB-INF/classes/config_datasource.xml
+  
+  822  sudo find /usr/local/tomcat/ -type f -name "*.xml" -exec grep visash {} \; -print | less
+  
+  823  sudo /scripts/edit_config_datasource/step2.sh VISASH
+  824  sudo /scripts/edit_config_datasource/edit_config_datasource.sh visash modules
+  825  sudo find /usr/local/tomcat/ -type f -name "*.xml" -exec grep visash {} \; -print | less
+  826  cd ..
+  827  cd conf
+  828  vi server.xml
+  829  vi context.xml
+  830  /usr/local/tomcat/bin/tom_apa_restart.sh
+  831  cd ..
+  832  cd webapps/hris
+  833  ls
+  834  cd WEB-INF/
+  835  vi web.xml
+  836  sudo find /usr/local/tomcat/ -type f -name "config.xml"
+  837  cd..
+  838  cd ..
+  839  vi WEB-INF/classes/config.xml
+  840  vi WEB-INF/classes/config_datasource.xml
+  841  /usr/local/tomcat/bin/tom_apa_restart.sh
+
++++
+
+[root@testsub1 edit_config_datasource]# ls /scripts/edit_config_datasource/setup.log
+
+========== Setup wpth on 1507-150407
+
+calendar
+epayslip
+hris
+user
+epayroll
+etemplate
+portal
+leave
+eclaim
+imp
+remoteuser
+reportadmin
+
+
+========== Setup verticurlin on 1227-151007
+
+calendar
+epayslip
+hris
+user
+epayroll
+etemplate
+
++++

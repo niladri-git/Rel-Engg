@@ -1,0 +1,34 @@
+testsub2 dep:
+
+Mod dep:
+
+web.xml
+
+server -> m/c ws -> war -> server -> restart
+
++++
+
+UATsub1 - sub3
+
+config_datasource.xml
+
++++
+
+Test -> sub1 , sub2
+UAT  -> sub1, sub3
+
++++
+
+db schema:
+
+test sub1 -> server.xml, context.xml, config_datasource.xml (epayroll -- always updated)
+test sub2 -> server.xml, context.xml
+
++++
+
+UAT db schema changes:
+
+config_datasource.xml
+
++++
+

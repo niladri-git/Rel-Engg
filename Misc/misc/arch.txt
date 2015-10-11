@@ -1,0 +1,24 @@
+
+Work Flow:
+
+Task -> Ask for prod files -> svn commit to test branch 
+
+	
+	Move to Test:
+	
+	checkout from test branch (update Test WS to latest) -> compile and pkg -> deploy to test env -> Mail dev & testers
+	
+	
+	Move to UAT:
+	
+	download files from Taskman -> Copy to UAT WS -> compile and pkg -> copy to network share 
+	
+																			-> Send mail for approval(PSG) & deployment(oktarack, dbi) developer in cc
+			
+	Move to Live:
+	
+	Share .class files with dev -> Dev will upload .class files to taskman 
+	
+										-> Dev lead will send mail for Live deployment
+				
+												-> Send mail for approval(Sean) & deployment(oktarack, dbi) with requestor and developer in cc

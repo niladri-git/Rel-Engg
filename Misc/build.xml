@@ -1,0 +1,69 @@
+<project name="epayroll" default="war" basedir=".">
+
+	<property name="projectname" value="epayroll" />
+	<property name="jarname" value="test" />
+         
+        <property name="build" location="build" />
+	<property name="project.libs" location="WEB-INF/lib" />
+	<property name="custom.libs" location="C:/Tomcat-5.5.17/common/lib"/>
+	<property name="src" value="WEB-INF/src" />
+	<property name="classes" value="WEB-INF/classes" />
+	<property name="jarFile" value="${projectname}.jar" />
+        
+
+	<path id="base.path">
+		<fileset dir="${project.libs}">
+			<include name="**/*.jar" />
+		</fileset>
+
+		<fileset dir="${custom.libs}">
+			<include name="**/*.jar"/>
+		</fileset>
+		
+	</path>
+
+	<!-- Main target -->
+	<target name="all" depends="compile" />
+	
+	<!-- Compiles the source code -->
+	<target name="compile" depends="clean" description="Compiles the source code">
+		<mkdir dir="${classes}"/>
+		
+		<copy todir="${classes}">
+			<fileset dir="${src}">
+                        <exclude name="**/*.java"/>
+			</fileset>
+		</copy>
+
+		<!-- Compile the java code from ${src} into ${classes} -->
+		<javac srcdir="${src}" destdir="${classes}" includeantruntime="false" debug="true">
+			<classpath>
+				<path refid="base.path"/>
+			</classpath>
+		</javac>
+				
+	</target>
+
+	<target name="createClassJar" depends="compile" description="Creates a .jar file for the .class files">
+		<mkdir dir="${build}"/>
+		<mkdir dir="${build}/WEB-INF/lib"/>
+
+		<jar destfile="${build}/WEB-INF/lib/${projectname}.jar" basedir="${classes}"/>
+	</target>
+	
+
+	<!--Clean build/doc folders -->
+	<target name="clean" description="Clean build / doc folders">
+		<delete dir="${classes}"/>		<delete file="${projectname}.war"/>
+    </target>
+	
+		
+	<!--generate a war file -->
+    <target name="war" depends="compile" >
+     	<war destfile="epayroll.war" update = "true" needxmlfile="false">
+            <classes dir="${classes}"/>
+     		<fileset dir=".">
+     		</fileset>
+        </war>
+    </target>
+</project>

@@ -1,0 +1,15 @@
+etaxchn
+=============
+additional of etaxchn module for MJNGZ
+
+1) etaxchn/WEB-INF/classes/config_datasource.xml   ===> add epayroll_mjngz & etaxchn_mjngz schemas
+2) etaxform/WEB-INF/classes/config_datasource.xml   ===> add epayroll_mjngz & etaxchn_mjngz schemas
+3) user/WEB-INF/classes/config_datasource.xml    ===> add etaxchn_mjngz.....    of course  epayroll_mjngz should be existed....
+4) remoteuser/WEB-INF/classes/config_datasource.xml    ===> add etaxchn_mjngz.....    of course  epayroll_mjngz should be existed....
+5) tomcat/conf/server.xml
+6) tomcat/conf/context.xml
+
+
+
+CONTEXT_ID	LINK	RPC_LINK	SERVICE_ID	DESCRIPTION
+34	https://uatportal.myolabo.com/etaxchn/catalog?		013	eTaxCHN

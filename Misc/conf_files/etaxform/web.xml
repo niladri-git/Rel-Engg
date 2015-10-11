@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
+<web-app>
+	<display-name>eTaxform</display-name>
+	<filter>
+		<filter-name>CAS Filter</filter-name>
+		<filter-class>
+			edu.yale.its.tp.cas.client.filter.CASFilter
+		</filter-class>
+		<init-param>
+			<param-name>
+				edu.yale.its.tp.cas.client.filter.loginUrl
+			</param-name>
+			<param-value>https://testsub1.myolabo.com/login/login</param-value>
+		</init-param>
+		<init-param>
+			<param-name>
+				edu.yale.its.tp.cas.client.filter.validateUrl
+			</param-name>
+			<param-value>
+				https://testsub1.myolabo.com/login/serviceValidate
+			</param-value>
+		</init-param>
+		<init-param>
+			<param-name>
+				edu.yale.its.tp.cas.client.filter.serverName
+			</param-name>
+			<param-value>testsub1.myolabo.com</param-value>
+		</init-param>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>CAS Filter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<listener>
+		<listener-class>
+			com.iadmin.etaxform.security.SessionListener
+		</listener-class>
+	</listener>
+	
+	<servlet>
+		<servlet-name>catalog</servlet-name>
+		<servlet-class>catalog.Catalog</servlet-class>
+		<init-param>
+			<param-name>debug</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		<init-param>
+			<param-name>afterModuleAdvise</param-name>
+			<param-value>
+				com.iadmin.etaxform.advise.AfterModuleAdvise
+			</param-value>
+		</init-param>
+		<init-param>
+	      <param-name>beforeModuleAdvise</param-name>
+	      <param-value>com.iadmin.etaxform.advise.BeforeModuleAdvise</param-value>
+	    </init-param>		
+		<init-param>
+			<param-name>repositoryAdvise</param-name>
+			<param-value>
+				com.iadmin.etaxform.advise.RepositoryAdvise
+			</param-value>
+		</init-param>
+		<init-param>
+			<param-name>onServiceAdvise</param-name>
+			<param-value>
+				com.iadmin.etaxform.advise.OnServiceAdvise
+			</param-value>
+		</init-param>
+		<init-param>
+			<param-name>jsp_path</param-name>
+			<param-value>/WEB-INF/jsp/etaxform/</param-value>
+		</init-param>
+		<init-param>
+			<param-name>common_error_jsp</param-name>
+			<param-value>com_warning.jsp</param-value>
+		</init-param>
+		<init-param>
+			<param-name>common_timeout_jsp</param-name>
+			<param-value>com_timeout.jsp</param-value>
+		</init-param>
+		<init-param>
+			<param-name>connectionPool</param-name>
+			<param-value>JNDI</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	
+  <servlet>
+    <servlet-name>JavaScript</servlet-name>
+    <servlet-class>catalog.JavaScript</servlet-class>
+  </servlet>
+  <servlet>
+		<servlet-name>TaxReport</servlet-name>
+		<servlet-class>
+			com.iadmin.etaxform.module.TaxReport
+		</servlet-class>
+  </servlet>
+  <servlet-mapping>
+		<servlet-name>TaxReport</servlet-name>
+		<url-pattern>/TaxReport</url-pattern>
+	</servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>catalog</servlet-name>
+    <url-pattern>/catalog</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>JavaScript</servlet-name>
+    <url-pattern>*.cjs</url-pattern>
+  </servlet-mapping>
+  
+  <!-- SESSION -->
+  <session-config>
+    <session-timeout>15</session-timeout>
+  </session-config>
+  <welcome-file-list>
+  	<welcome-file>index.htm</welcome-file>
+  </welcome-file-list>
+  <taglib>
+		<taglib-uri>/catalog.tld</taglib-uri>
+		<taglib-location>/WEB-INF/catalog.tld</taglib-location>
+	</taglib>
+	<taglib>
+    <taglib-uri>http://java.sun.com/jstl/core</taglib-uri>
+    <taglib-location>/WEB-INF/c.tld</taglib-location>
+  </taglib>
+
+  <taglib>
+    <taglib-uri>http://java.sun.com/jstl/fmt</taglib-uri>
+    <taglib-location>/WEB-INF/fmt.tld</taglib-location>
+  </taglib>
+</web-app>
+
+
+
+
+

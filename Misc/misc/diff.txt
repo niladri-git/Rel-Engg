@@ -1,0 +1,84 @@
+[root@testsub1 tomcat]# find /usr/local/tomcat/ -type f -name "*.xml" -exec grep mjngz {} \; -print
+
+
+                <name>etaxchn_mjngz</name>
+<etaxchn_mjngz>
+        <user>etaxchn_mjngz</user>
+</etaxchn_mjngz>
+
+LAACKING of EPAYROLL_MJNGZ schema
+
+/usr/local/tomcat/webapps/etax/WEB-INF/classes/config_datasource.xml    NO NEED ETAX module,  but ETAXCHN module
+<name>ehr_mjngz</name>
+<name>epayroll_mjngz</name>  not necessary to have epayroll_ schema 
+<name>etemplate_mjngz</name>   not necessary to have etemplate schema
+/usr/local/tomcat/webapps/calendar/WEB-INF/classes/config_datasource.xml
+                <name>ehr_mjngz</name>
+                <name>epayroll_mjngz</name>
+                <name>etemplate_mjngz</name>   == not necessary to have etemplate_ 
+/usr/local/tomcat/webapps/reportadmin/WEB-INF/classes/config_datasource.xml
+<name>ehr_mjngz</name>
+<name>epayroll_mjngz</name>   NOT NEcessary to have ePayroll_ schema  
+<name>etemplate_mjngz</name>   NOT necessary to havev etemplate _schema 
+/usr/local/tomcat/webapps/leave/WEB-INF/classes/config_datasource.xml
+<name>ehr_mjngz</name>
+<name>epayroll_mjngz</name>
+<name>etemplate_mjngz</name>
+/usr/local/tomcat/webapps/etemplate/WEB-INF/classes/config_datasource.xml
+<name>ehr_mjngz</name>
+<name>epayroll_mjngz</name>    == NOT Necessarry to have epayroll_ schema
+<name>etemplate_mjngz</name>   == nOT necessary to have etemplate schema
+/usr/local/tomcat/webapps/portal/WEB-INF/classes/config_datasource.xml
+        <name>etaxchn_mjngz</name>
+		
+LACKING OF EPAYROLL_MJNGZ schema
+		
+/usr/local/tomcat/webapps/etaxform/WEB-INF/classes/config_datasource.xml
+<name>ehr_mjngz</name>  NOT NECESSARY for EHR_ schema
+<name>epayroll_mjngz</name>
+<name>etemplate_mjngz</name>  NOT NECESSARY for ETEMPLATE_ schema
+/usr/local/tomcat/webapps/epayslip/WEB-INF/classes/config_datasource.xml
+<name>ehr_mjngz</name>
+<name>epayroll_mjngz</name>
+<name>etemplate_mjngz</name>
+/usr/local/tomcat/webapps/epayroll/WEB-INF/classes/config_datasource.xml
+<name>ehr_mjngz</name>
+<name>epayroll_mjngz</name>
+<name>etemplate_mjngz</name>
+
+LACKING OF ETAXCHN_MJNGZ
+
+/usr/local/tomcat/webapps/user/WEB-INF/classes/config_datasource.xml
+<name>ehr_mjngz</name>
+<name>epayroll_mjngz</name>
+<name>etemplate_mjngz</name>
+
+LACKING OF ETAXCHN_MJNGZ
+
+/usr/local/tomcat/webapps/remoteuser/WEB-INF/classes/config_datasource.xml
+<name>ehr_mjngz</name>
+<name>epayroll_mjngz</name>
+<name>etemplate_mjngz</name>  ====== NOT NECESSARY ETEMPLATE
+/usr/local/tomcat/webapps/hris/WEB-INF/classes/config_datasource.xml
+                global="ehr_mjngz"
+                name="ehr_mjngz"
+                global="epayroll_mjngz"
+                name="epayroll_mjngz"
+                global="etemplate_mjngz"
+                name="etemplate_mjngz"
+                global="etaxchn_mjngz"
+                name="etaxchn_mjngz"
+/usr/local/tomcat/conf/context.xml
+                name="ehr_mjngz"
+                user="ehr_mjngz"
+                password="ehr_mjngzqwsa"
+                name="epayroll_mjngz"
+                user="epayroll_mjngz"
+                password="epayroll_mjngzqwsa"
+                name="etemplate_mjngz"
+                user="etemplate_mjngz"
+                password="etemplate_mjngzqwsa"
+                name="etaxchn_mjngz"
+                user="etaxchn_mjngz"
+                password="etaxchn_mjngzqwsa"
+/usr/local/tomcat/conf/server.xml

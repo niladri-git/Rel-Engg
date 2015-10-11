@@ -1,0 +1,258 @@
+Repository Access Rules
+[/]
+* = r
+
+[/]
+amit = rw
+niladri = rw
+
+[ehr:/branches/epayroll/B1.0.1]
+pankaj = rw
+
+[ehr:/branches/hris/B1.0.1]
+priyadarshini = rw
+
+[ehr:/branches/remoteuser/B1.0.1]
+priyadarshini = rw
+
+[ehr:/branches/epayroll/B1.0.1]
+shilpa = rw
+
+[ehr:/branches/escheduler/B1.0.1]
+pankaj = rw
+
+[ehr:/branches/epayroll/B1.0.1]
+priyadarshini = rw
+
+[ehr:/branches/leave/B1.0.1]
+pankaj = rw
+
+[ehr:/branches/leave/B1.1.0]
+pankaj = rw
+[ehr:/branches/epayroll/B1.0.1]
+shiv = rw
+
+[External:/branches/outside/B1.0.1]
+ramakanth = rw
+
+[ehr:/branches/epayroll/B1.0.1]
+anusha = rw
+
+[ehr:/branches/epayroll/B1.0.1]
+kalva = rw
+
+[ehr:/branches/eclaim/B1.0.1]
+kalva = rw
+
+[ehr:/branches/mainlogin/B1.0.1]
+kalva = rw
+
+[ehr:/branches/etimesheet/B1.0.1]
+kalva = rw
+
+[ehr:/branches/epayroll/B1.0.1]
+ramakanth = rw
+
+[ehr:/branches/user/B1.0.1]
+ramakanth = rw
+
+[ehr:/branches/hris/B1.0.1]
+pankaj = rw
+
+[ehr:/branches/epayroll/B1.0.1]
+prateek = rw
+
+[ehr:/branches/reportadmin/B2.0.1_Enhancement]
+prateek = rw
+
+[ehr:/branches/reportadmin/B2.0.1_Enhancement]
+anusha = rw
+
+[ehr:/branches/reportadmin/B2.0.1_Enhancement]
+ramakanth = rw
+
+[ehr:/branches/epayroll/B1.0.1]
+dipesh = rw
+
+[ehr:/branches/epayroll/B1.0.1]
+amitk = rw
+
+[ehr:/branches/epayslip/B1.0.1]
+amitk = rw
+
+[ehr:/branches/portal/B1.0.1]
+amitk = rw
+
+[ehr:/branches/mainlogin/B1.0.1]
+amitk = rw
+
+[ehr:/branches/login/B1.0.1]
+amitk = rw
+
+[ehr:/branches/epayroll/B1.1.0]
+mani = rw
+
+[ehr:/branches/etaxtw/B1.0.1]
+mani = rw
+
+[ehr:/branches/hktax/B1.0.1]
+mani = rw
+
+[ehr:/branches/etaxHK/B1.0.1]
+mani = rw
+
+[ehr:/branches/mainlogin/B1.0.1]
+mani = rw
+[ehr:/branches/login/B1.0.1]
+mani = rw
+[ehr:/branches/portal/B1.0.1]
+mani = rw
+[ehr:/branches/hris/B1.0.1]
+mani = rw
+[ehr:/branches/leave/B1.0.1]
+mani = rw
+[ehr:/branches/epayroll/B1.0.1]
+mani = rw
+[External:/branches/imp/B1.0.1]
+mani = rw
+[ehr:/branches/epayroll/B1.1.0]
+prateek = rw
+
+[ehr:/branches/epayslip/B1.0.1]
+shilpa = rw
+
+[ehr:/branches/reportadmin/B2.0.1_Enhancement]
+shiv = rw
+
+[ehr:/branches/epayslip/B1.0.1]
+pankaj = rw
+
+[ehr:/branches/reportadmin/B2.0.1_Enhancement]
+priyadarshini  = rw
+
+[ehr:/branches/reportadmin/B1.1.0]
+mani = rw
+
+[ehr:/branches/reportadmin/B2.0.1_Enhancement]
+sapna = rw
+
+[ehr:/branches/reportadmin/B2.0.1_Enhancement]
+mani = rw
+
+[ehr:/branches/portal/B1.0.1]
+sapna = rw
+
+[ehr:/branches/epayroll/B1.0.1]
+sapna = rw
+
+[ehr:/branches/reportadmin/B1.1.0]
+biru = rw
+
+[ehr:/branches/etemplate/B1.0.1]
+pankaj = rw
+
+[ehr:/branches/etemplate/B1.0.1]
+shilpa = rw
+
+[ehr:/branches/etemplate/B1.0.1]
+shiv = rw
+
+[ehr:/branches/hris/B1.0.1]
+sapna = rw
+
+[ehr:/branches/hris/B1.1.0]
+sapna = rw
+
+[ehr:/branches/hris/B1.1.0]
+shiv = rw
+
+[ehr:/branches/etemplate/B1.0.1]
+shiv = rw
+
+[ehr:/branches/user/B1.0.1]
+sapna = rw
+
+[ehr:/branches/etemplate/B1.0.1]
+kalva = rw
+
+[ehr:/branches/etemplate/B1.0.1]
+sapna = rw
+
+[ehr:/branches/hris/B1.0.1]
+shilpa = rw
+
+[ehr:/branches/mainlogin/B1.0.1]
+sapna = rw
+
+[ehr:/branches/leave/B1.0.1]
+kalva = rw
+
+[ehr:/branches/login/B1.0.1]
+sapna = rw
+
+[ehr:/branches/portal/B1.0.1]
+shilpa = rw
+
+[ehr:/branches/leave/B1.0.1]
+shilpa = rw
+
+[ehr:/branches/leave/B1.0.1]
+sapna = rw
+
+[ehr:/branches/hris/B1.0.1]
+anusha = rw
+
+[ehr:/branches/epayslip/B1.0.1]
+sapna = rw
+
+[ehr:/branches/hris/B1.0.1]
+kalva = rw
+
+[ehr:/branches/hris/B1.0.1]
+shiv = rw
+
+[ehr:/branches/epayslip/B1.0.1]
+kalva = rw
+
+[ehr:/branches/etimesheet/B1.0.1]
+sapna = rw
+
+[ehr:/branches/epayslip/B1.0.1]
+sapna = rw
+
+
+[External:/branches/citissbhk/B1.0.1]
+shilpa = rw
+
+[External:/branches/outside/B1.0.1]
+amitk = rw
+
+[ehr:/branches/remoteuser/B1.0.1]
+kalva = rw
+
+[ehr:/branches/user/B1.0.1]
+kalva = rw
+
+[External:/branches/outside/B1.1.0]
+amitk = rw
+
+[External:/branches/outside/B1.0.1]
+shilpa = rw
+
+[External:/branches/outside/B1.0.1]
+anusha = rw
+
+[External:/branches/ereport/B1.0.1]
+shilpa = rw
+
+[External:/branches/einstruction/B1.0.1]
+shilpa = rw
+
+[Prod_Module:/trunk/epayroll]
+shiv = r
+
+[Prod_Module:/trunk/hris]
+shiv = r
+
+[Prod_Module:/trunk/reportadmin]
+prateek = r

@@ -1,0 +1,16 @@
+db_name.70=ehr_energizer3hk
+db_driver.70=oracle.jdbc.driver.OracleDriver
+db_url.70=jdbc:oracle:thin:@testsub1db.myolabo.com:1521:xe
+db_username.70=ehr_energizer3hk
+db_password.70=ehr_energizer3hkqwsa
+enableCache.70=true
+maximumsize.70=5
+
+db_name.71=epayroll_energizer3hk
+db_driver.71=oracle.jdbc.driver.OracleDriver
+db_url.71=jdbc:oracle:thin:@testsub1db.myolabo.com:1521:xe
+db_username.71=epayroll_energizer3hk
+db_password.71=epayroll_energizer3hkqwsa
+enableCache.71=true
+maximumsize.71=5
+

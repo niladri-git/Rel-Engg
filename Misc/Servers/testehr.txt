@@ -1,0 +1,407 @@
+[root@testehr local]# ifconfig
+eth0      Link encap:Ethernet  HWaddr 82:9B:2D:AD:A3:9D
+          inet addr:192.168.89.246  Bcast:192.168.89.255  Mask:255.255.255.0
+          inet6 addr: fe80::809b:2dff:fead:a39d/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:2930592 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:2081317 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000
+          RX bytes:575210883 (548.5 MiB)  TX bytes:400269919 (381.7 MiB)
+
+lo        Link encap:Local Loopback
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:16436  Metric:1
+          RX packets:39856 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:39856 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0
+          RX bytes:38732713 (36.9 MiB)  TX bytes:38732713 (36.9 MiB)
+
+		  
+[root@testehr local]# pwd
+/usr/local
+
+[root@testehr local]# ls -ltr
+total 88
+drwxr-xr-x  2 root root   4096 May 11  2011 src
+drwxr-xr-x  4 root root   4096 May 11  2011 share
+drwxr-xr-x  2 root root   4096 May 11  2011 sbin
+drwxr-xr-x  2 root root   4096 May 11  2011 libexec
+drwxr-xr-x  2 root root   4096 May 11  2011 lib64
+drwxr-xr-x  2 root root   4096 May 11  2011 lib
+drwxr-xr-x  2 root root   4096 May 11  2011 include
+drwxr-xr-x  2 root root   4096 May 11  2011 games
+drwxr-xr-x  2 root root   4096 May 11  2011 etc
+drwxr-xr-x  2 root root   4096 May 11  2011 bin
+lrwxrwxrwx  1 root root     13 Aug  7  2012 tomcat -> tomcat-5.5.17
+drwxr-xr-x 16 root sys    4096 May  7  2013 apache2
+drwxr-x--- 11 root tomcat 4096 Nov 13  2014 tomcat-5.5.17
+
+[root@testehr usr]# pwd
+/usr
+
+[root@testehr usr]# ls -ltr
+total 208
+drwxr-xr-x   9 root root  4096 May 28  2008 jdk1.5.0_16
+drwxr-xr-x   2 root root  4096 May 11  2011 games
+drwxr-xr-x   2 root root  4096 May 11  2011 etc
+drwxr-xr-x   3 root root  4096 Apr 20  2012 X11R6
+lrwxrwxrwx   1 root root    10 Apr 20  2012 tmp -> ../var/tmp
+drwxr-xr-x   5 root root  4096 Apr 20  2012 src
+lrwxrwxrwx   1 root root    11 Aug  7  2012 java -> jdk1.5.0_16
+drwxr-xr-x  14 root root  4096 Feb 20  2013 local
+drwxr-xr-x 107 root root  4096 Feb 26  2013 share
+drwxr-xr-x   6 root root  4096 Sep 23  2014 kerberos
+drwxr-xr-x 103 root root 12288 Mar 23  2015 include
+drwxr-xr-x  49 root root 28672 Mar 24  2015 lib
+drwxr-xr-x   9 root root  4096 Mar 24  2015 libexec
+drwxr-xr-x  56 root root 36864 Mar 24  2015 lib64
+drwxr-xr-x   2 root root 12288 Mar 24  2015 sbin
+drwxr-xr-x   2 root root 32768 Mar 24  2015 bin
+
+[root@testehr i-admin]# pwd
+/i-admin
+
+[root@testehr i-admin]# ls -ltr
+total 96
+-rwxrwxr-x  1 root   tomcat  1012 Nov  7  2008 iadmin.ini
+-rwxrwxr-x  1 root   tomcat   828 Nov  7  2008 iadmin_hsbcsg.ini
+-rwxrwxr-x  1 root   tomcat    24 Nov 10  2008 trusthost.ini
+drwxrwxr-x  3 root   tomcat  4096 Aug  8  2012 newhome
+-rwxr-xr-x  1 root   tomcat  1066 Sep 18  2014 iadmin_outside.ini.18Sep2014
+-rwxr-xr-x  1 root   tomcat   953 Sep 18  2014 pool.props.18Sep2014
+-rwxr-xr-x  1 tomcat tomcat 12775 Sep 18  2014 iadmin_outside.ini
+drwxr-xr-x  8 tomcat tomcat  4096 Sep 29  2014 sftp
+drwxrwxr-x 17 root   tomcat  4096 Jul 14 17:24 product
+-rwxr-xr-x  1 root   root   13740 Jul 15 11:36 pool.props.org
+-rwxr-xr-x  1 root   root   15582 Sep 24 15:23 pool.props.24Sep2015
+-rwxr-xr-x  1 root   root   16072 Sep 24 15:28 pool.props
+
+[root@testehr i-admin]# diff pool.props.24Sep2015 pool.props
+558a559,573
+> db_name.70=ehr_energizer3hk
+> db_driver.70=oracle.jdbc.driver.OracleDriver
+> db_url.70=jdbc:oracle:thin:@testsub1db.myolabo.com:1521:xe
+> db_username.70=ehr_energizer3hk
+> db_password.70=ehr_energizer3hkqwsa
+> enableCache.70=true
+> maximumsize.70=5
+>
+> db_name.71=epayroll_energizer3hk
+> db_driver.71=oracle.jdbc.driver.OracleDriver
+> db_url.71=jdbc:oracle:thin:@testsub1db.myolabo.com:1521:xe
+> db_username.71=epayroll_energizer3hk
+> db_password.71=epayroll_energizer3hkqwsa
+> enableCache.71=true
+> maximumsize.71=5
+
++++
+
+[root@testehr tomcat]# pwd
+/usr/local/tomcat
+
+[root@testehr tomcat]# ls -ltr
+total 368
+drwxr-x--- 4 root   tomcat   4096 Apr 15  2006 shared
+-rw-r----- 1 root   tomcat   6384 Apr 15  2006 RELEASE-NOTES
+drwxr-x--- 5 root   tomcat   4096 Apr 15  2006 server
+-rw-r----- 1 root   tomcat   6964 Apr 15  2006 RUNNING.txt
+-rw-r----- 1 root   tomcat    688 Apr 15  2006 NOTICE
+-rw-r----- 1 root   tomcat  11357 Apr 15  2006 LICENSE
+drwxr-x--- 6 root   tomcat   4096 Aug  3  2006 common
+-rw-r----- 1 root   tomcat   3447 Aug  6  2007 sqlnet.log
+drwxrwx--- 3 root   tomcat   4096 Sep 21  2007 work
+-rw-r----- 1 root   tomcat      0 Mar 29  2008 logcatalog.log
+-rw-r----- 1 root   tomcat    909 Nov 27  2008 conf.txt
+drwxr-x--- 2 root   tomcat   4096 Jan 26  2015 bin
+drwxrwxrwx 2 tomcat tomcat   4096 Aug 27 16:01 temp
+drwxrwx--- 6 root   tomcat   4096 Sep  5 00:29 webapps
+drwxr-x--- 4 root   tomcat   4096 Sep 10 14:05 conf
+drwxrwx--- 2 root   tomcat 299008 Sep 25 00:00 logs
+
++++
+
+[root@testehr conf]# pwd
+/usr/local/tomcat/conf
+
+[root@testehr conf]# ls -ltr
+total 2892
+-rw-r----- 1 root   tomcat    7455 Apr 15  2006 catalina.policy
+-rw-r----- 1 root   tomcat    2824 Aug 22  2006 logging.properties
+-rw-r----- 1 root   tomcat    3114 Aug 22  2006 catalina.properties
+-rw-r----- 1 root   tomcat   18432 Oct 26  2006 ~
+drwxr-xr-x 5 tomcat tomcat    4096 Apr 11  2011 oiosaml.home
+-rw-r----- 1 root   tomcat   46486 May 11  2012 web.xml
+-rw-r----- 1 root   tomcat     436 May 11  2012 tomcat-users.xml
+-rw-r----- 1 root   tomcat     851 May 11  2012 server-minimal.xml
+-rw-r--r-- 1 andy   andy   2684015 May  7  2013 oiosaml.home.tgz
+drwxr-x--- 2 root   tomcat    4096 Aug 14  2013 Catalina
+-rw-r----- 1 root   tomcat   45976 Oct 20  2014 server.xml.20141113
+-rw-r----- 1 root   tomcat   45972 Jan 22  2015 server.xml-03Aug15
+-rw-r----- 1 root   tomcat    9347 Sep  2 17:19 context.xml
+-rw-r----- 1 root   tomcat   53225 Sep  2 17:20 server.xml
+
+[root@testehr conf]# diff server.xml-03Aug15 server.xml | more
+675a676,847
+> <Resource
+>                 name="ehr_bnl"
+>                 auth="Container"
+>                 type="com.mchange.v2.c3p0.ComboPooledDataSource"
+>                 factory="org.apache.naming.factory.BeanFactory"
+>                 user="ehr_bnl"
+>                 password="ehr_bnlqwsa"
+>                 driverClass="oracle.jdbc.OracleDriver"
+>                 jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+>                 maxIdleTime="60"
+>                 maxPoolSize="20"
+>                 minPoolSize="5"
+>         acquireIncrement="5"/>
+>
+> <Resource
+>                 name="ehr_commvalutgz"
+>                 auth="Container"
+>                 type="com.mchange.v2.c3p0.ComboPooledDataSource"
+>                 factory="org.apache.naming.factory.BeanFactory"
+>                 user="ehr_commvalutgz"
+>                 password="ehr_commvalutgzqwsa"
+>                 driverClass="oracle.jdbc.OracleDriver"
+>                 jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+>                 maxIdleTime="60"
+>                 maxPoolSize="20"
+>                 minPoolSize="5"
+>         acquireIncrement="5"/>
+>
+> <Resource
+>                 name="ehr_linkedlnsg"
+>                 auth="Container"
+>                 type="com.mchange.v2.c3p0.ComboPooledDataSource"
+>                 factory="org.apache.naming.factory.BeanFactory"
+>                 user="ehr_linkedlnsg"
+>                 password="ehr_linkedlnsgqwsa"
+>                 driverClass="oracle.jdbc.OracleDriver"
+>                 jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+>                 maxIdleTime="60"
+>                 maxPoolSize="20"
+>                 minPoolSize="5"
+>         acquireIncrement="5"/>
+>       <Resource
+>                 name="epayroll_linkedlnsg"
+>                 auth="Container"
+>                 type="com.mchange.v2.c3p0.ComboPooledDataSource"
+>                 factory="org.apache.naming.factory.BeanFactory"
+>                 user="epayroll_linkedlnsg"
+>                 password="epayroll_linkedlnsgqwsa"
+>                 driverClass="oracle.jdbc.OracleDriver"
+>                 jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+>                 maxIdleTime="60"
+>                 maxPoolSize="20"
+>                 minPoolSize="5"
+>         acquireIncrement="5"/>
+>         <Resource
+>                 name="etemplate_linkedlnsg"
+>                 auth="Container"
+>                 type="com.mchange.v2.c3p0.ComboPooledDataSource"
+>                 factory="org.apache.naming.factory.BeanFactory"
+>                 user="etemplate_linkedlnsg"
+>                 password="etemplate_linkedlnsgqwsa"
+>                 driverClass="oracle.jdbc.OracleDriver"
+>                 jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+>                 maxIdleTime="60"
+>                 maxPoolSize="20"
+>                 minPoolSize="5"
+>         acquireIncrement="5"/>
+>       <Resource
+>                 name="ehr_testingida"
+>                 auth="Container"
+>                 type="com.mchange.v2.c3p0.ComboPooledDataSource"
+>                 factory="org.apache.naming.factory.BeanFactory"
+>                 user="ehr_testingida"
+>                 password="ehr_testingidaqwsa"
+>                 driverClass="oracle.jdbc.OracleDriver"
+>                 jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+>                 maxIdleTime="60"
+>                 maxPoolSize="20"
+>                 minPoolSize="5"
+>         acquireIncrement="5"/>
+>         <Resource
+>                 name="epayroll_testingida"
+>                 auth="Container"
+>                 type="com.mchange.v2.c3p0.ComboPooledDataSource"
+>                 factory="org.apache.naming.factory.BeanFactory"
+>                 user="epayroll_testingida"
+>                 password="epayroll_testingidaqwsa"
+>                 driverClass="oracle.jdbc.OracleDriver"
+>                 jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+>                 maxIdleTime="60"
+>                 maxPoolSize="20"
+>                 minPoolSize="5"
+>         acquireIncrement="5"/>
+>         <Resource
+>                 name="etemplate_testingida"
+>                 auth="Container"
+>                 type="com.mchange.v2.c3p0.ComboPooledDataSource"
+>                 factory="org.apache.naming.factory.BeanFactory"
+>                 user="etemplate_testingida"
+>                 password="etemplate_testingidaqwsa"
+>                 driverClass="oracle.jdbc.OracleDriver"
+>                 jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+>                 maxIdleTime="60"
+>                 maxPoolSize="20"
+>                 minPoolSize="5"
+>         acquireIncrement="5"/>
+>       <Resource
+>                 name="ehr_rimau"
+>                 auth="Container"
+>                 type="com.mchange.v2.c3p0.ComboPooledDataSource"
+>                 factory="org.apache.naming.factory.BeanFactory"
+>                 user="ehr_rimau"
+>                 password="ehr_rimauqwsa"
+>                 driverClass="oracle.jdbc.OracleDriver"
+>                 jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+>                 maxIdleTime="60"
+>                 maxPoolSize="20"
+>                 minPoolSize="5"
+>         acquireIncrement="5"/>
+>         <Resource
+>                 name="epayroll_rimau"
+>                 auth="Container"
+>                 type="com.mchange.v2.c3p0.ComboPooledDataSource"
+>                 factory="org.apache.naming.factory.BeanFactory"
+>                 user="epayroll_rimau"
+>                 password="epayroll_rimauqwsa"
+>                 driverClass="oracle.jdbc.OracleDriver"
+>                 jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+>                 maxIdleTime="60"
+>                 maxPoolSize="20"
+>                 minPoolSize="5"
+>         acquireIncrement="5"/>
+>         <Resource
+>                 name="etemplate_rimau"
+>                 auth="Container"
+>                 type="com.mchange.v2.c3p0.ComboPooledDataSource"
+>                 factory="org.apache.naming.factory.BeanFactory"
+>                 user="etemplate_rimau"
+>                 password="etemplate_rimauqwsa"
+>                 driverClass="oracle.jdbc.OracleDriver"
+>                 jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+>                 maxIdleTime="60"
+>                 maxPoolSize="20"
+>                 minPoolSize="5"
+>         acquireIncrement="5"/>
+>       <Resource
+>                 name="ehr_abchk"
+>                 auth="Container"
+>                 type="com.mchange.v2.c3p0.ComboPooledDataSource"
+>                 factory="org.apache.naming.factory.BeanFactory"
+>                 user="ehr_abchk"
+>                 password="ehr_abchkqwsa"
+>                 driverClass="oracle.jdbc.OracleDriver"
+>                 jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+>                 maxIdleTime="60"
+>                 maxPoolSize="20"
+>                 minPoolSize="5"
+>         acquireIncrement="5"/>
+>        <Resource
+>                 name="ehr_schedule"
+>                 auth="Container"
+>                 type="com.mchange.v2.c3p0.ComboPooledDataSource"
+>                 factory="org.apache.naming.factory.BeanFactory"
+>                 user="ehr_schedule"
+>                 password="ehr_scheduleqwsa"
+>                 driverClass="oracle.jdbc.OracleDriver"
+>                 jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+>                 maxIdleTime="60"
+>                 maxPoolSize="20"
+>                 minPoolSize="5"
+>         acquireIncrement="5"/>
+
++++
+
+[root@testehr webapps]# pwd
+/usr/local/tomcat/webapps
+
+[root@testehr webapps]# ls -ltr
+total 39628
+-rw-r----- 1 root   tomcat    13083 Nov 11  2014 MultiSupport.class
+drwxr-x--- 7 root   tomcat     4096 Jul 14 13:54 outside
+drwxr-xr-x 5 tomcat tomcat     4096 Aug  6 11:30 escheduler
+-rw-r--r-- 1 root   root   20412329 Aug 31 18:45 imp.war
+drwxr-xr-x 8 tomcat tomcat     4096 Aug 31 18:45 imp
+-rw-r--r-- 1 root   root   15756456 Sep  5 00:29 mainlogin.war
+drwxr-xr-x 8 tomcat tomcat     4096 Sep  5 00:29 mainlogin
+-rw-r--r-- 1 root   root    4316448 Sep  9 17:47 escheduler.war
+
++++
+
+[root@testehr web]# pwd
+/root/ehr/web
+
+[root@testehr web]# ls
+accesscontrol  eclaim        epayroll  eregistration  etaxform  etaxmy  etemplate   helpdesk  implementation  leave  login.tgz  portal.tgz  survey  temp
+calendar       einstruction  epayslip  etax           etaxhk    etaxtw  etimesheet  hris      jobScheduler    login  portal     remoteuser  tax     user
+
+[root@testehr epayroll]# pwd
+/root/ehr/web/epayroll
+
+[root@testehr epayroll]# ls
+bg.css  build.xml  catalog_include  epayroll  images  index.html  js  logcatalog.log  pragmatic-internals  text.css  WEB-INF
+
+[root@testehr WEB-INF]# pwd
+/root/ehr/web/epayroll/WEB-INF
+
+[root@testehr WEB-INF]# ls -ltr
+total 260
+-rw-r--r-- 1 root root  4735 Feb 26  2013 web.xml-25Apr07
+-rw-r--r-- 1 root root  3233 Feb 26  2013 SSOvendor-bar.xml
+-rw-r--r-- 1 root root  1960 Feb 26  2013 SSOsuperadmin-bar.xml.16may07
+-rw-r--r-- 1 root root   909 Feb 26  2013 SSOmanager-bar.xml
+-rw-r--r-- 1 root root   759 Feb 26  2013 SSOclienthr-bar.xml.080526-
+drwxr-x--- 2 root root  4096 Feb 26  2013 lib
+drwxr-x--- 3 root root  4096 Feb 26  2013 jsp
+-rw-r----- 1 root root 12532 Feb 26  2013 fmt.tld
+-rw-r--r-- 1 root root 11394 Feb 26  2013 fmt-rt.tld
+-rw-r--r-- 1 root root 11312 Feb 26  2013 c.tld
+-rw-r--r-- 1 root root  4846 Feb 26  2013 web.xml.04Dec08
+-rw-r--r-- 1 root root  4802 Feb 26  2013 web.xml
+-rw-r--r-- 1 root root  2719 Feb 26  2013 SSOsuperadmin-bar.xml.080327
+-rw-r--r-- 1 root root  2893 Feb 26  2013 SSOsuperadmin-bar.xml
+-rw-r--r-- 1 root root   759 Feb 26  2013 SSOclienthr-bar.xml
+-rw-r--r-- 1 root root  1968 Feb 26  2013 SSOadministrator-bar.xml.16May07
+-rw-r--r-- 1 root root  2724 Feb 26  2013 SSOadministrator-bar.xml.080327
+-rw-r----- 1 root root  3258 Feb 26  2013 SSOadministrator-bar.xml
+-rw-r--r-- 1 root root  2535 Feb 26  2013 pragmatic-controls.tld
+-rw-r--r-- 1 root root 10763 Feb 26  2013 c-rt.tld
+-rw-r--r-- 1 root root 29364 Feb 26  2013 catalog.tld
+-rw-r--r-- 1 root root  6732 Feb 26  2013 build.xml
+drwxr-x--- 4 root root  4096 Feb 26  2013 bin
+-rw-r--r-- 1 root root  2717 Feb 26  2013 SSOsuperadmin-bar.xml.080703
+-rw-r--r-- 1 root root  3069 Feb 26  2013 SSOadministrator-bar.xml.task(2607)_0440-110224
+-rw-r--r-- 1 root root  2722 Feb 26  2013 SSOadministrator-bar.xml.080703
+-rw-r--r-- 1 root root  1112 Feb 26  2013 log4j.properties
+drwxr-x--- 4 root root 36864 Feb 26  2013 classes
+drwxr-x--- 3 root root  4096 Feb 26  2013 test
+-rw-r--r-- 1 root root   753 Feb 26  2013 SSOemployee-bar.xml
+-rw-r--r-- 1 root root  2898 Feb 26  2013 SSOadministrator-bar.xml.090113
+drwxr-x--- 4 root root 20480 Feb 26  2013 src
+-rw-r--r-- 1 root root  1434 Feb 26  2013 sqlnet.log
+
+[root@testehr WEB-INF]# diff web.xml.04Dec08 web.xml
+9c9
+<                       <param-value>https://i-admin.epayslip.com/login/login</param-value>
+---
+>                       <param-value>https://sub1.i-admin.com/login/login</param-value>
+13c13
+<                       <param-value>https://i-admin.epayslip.com/login/serviceValidate</param-value>
+---
+>                       <param-value>https://sub1.i-admin.com/login/serviceValidate</param-value>
+17c17
+<                       <param-value>i-admin.epayslip.com</param-value>
+---
+>                       <param-value>sub1.i-admin.com</param-value>
+
+
+<       <param-value>com.iadmin.epayroll.advise.ConnectionPool</param-value>
+---
+>       <param-value>JNDI</param-value>
+
++++

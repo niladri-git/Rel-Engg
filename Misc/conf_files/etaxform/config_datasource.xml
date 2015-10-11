@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!--Need to list the available alias for special processing and email reminders-->
+<datasource>
+  <names>
+     <name>portal</name>
+    <name>etax_tnl</name>
+	<name>etaxhk_momentivehk</name>
+	<name>epayroll_momentivetw</name>
+	<name>etaxmy_mjnmy</name>
+	<name>etaxtw_mjntw</name>
+	<name>etax_oraclesg</name>
+  </names>
+</datasource>

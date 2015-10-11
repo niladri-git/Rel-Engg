@@ -1,0 +1,77 @@
+WinSCP.exe sftp://niladri@192.168.89.247 /privatekey=c:\Keys\private.ppk
+
+WinSCP.exe /privatekey=c:\Keys\private.ppk sftp://niladri@192.168.89.247 /log="C:\winscp.log"
+
+winscp.com /privatekey=c:\Keys\private.ppk /command "open sftp://niladri@192.168.89.247" 
+
+winscp.com /privatekey=c:\Keys\private.ppk /command "open sftp://niladri@192.168.89.247 -passphrase=iadmin" "put c:\Logs\test.txt"
+
+winscp.com /command "option confirm on" "open  sftp://niladri@192.168.89.247 -passphrase=iadmin" "put c:\Logs\test.txt" /home/niladri/Test" "exit"
+
++++
+
+winscp> help
+
+call     Executes arbitrary remote command
+cd       Changes remote working directory
+checksum Calculates checksum of remote file
+chmod    Changes permissions of remote file
+close    Closes session
+echo     Displays its arguments as message
+exit     Closes all sessions and terminates the program
+get      Downloads file from remote directory to local directory
+help     Displays help
+keepuptodate Continuously reflects changes in local directory on remote one
+lcd      Changes local working directory
+lls      Lists the contents of local directory
+ln       Creates remote symbolic link
+lpwd     Prints local working directory
+ls       Lists the contents of remote directory
+mkdir    Creates remote directory
+mv       Moves or renames remote file
+open     Connects to server
+option   Sets or shows value of script options
+put      Uploads file from local directory to remote directory
+pwd      Prints remote working directory
+rm       Removes remote file
+rmdir    Removes remote directory
+session  Lists connected sessions or selects active session
+stat     Retrieves attributes of remote file
+synchronize Synchronizes remote directory with local one
+
++++
+
+Option	Values and description
+
+echo	off|on 
+Toggles echoing of command being executed. 
+Commands affected: all 
+Default: off
+
+batch	off|on|abort|continue 
+Enables batch mode. In batch mode, any choice prompt is automatically replied and any input prompt is cancelled (after short time interval). 
+In batch mode, it is recommended to set confirm to off to allow overwrites. 
+
+When batch mode is set to on any choice prompt is automatically replied negatively. Unless the prompt has a different default answer (such as a default “Reconnect” answer for a reconnect prompt), in what case the default answer is used (after a short time interval). See also a reconnecttime option below. 
+Value abort is like on. In addition, the script is aborted, when any script command fails or any choice prompt is replied with “Abort” answer (or similar). 
+
+When set to continue any choice prompt is automatically replied with “Skip”, “Ignore” or similar answer. 
+Enabling batch mode sets reconnect time (reconnecttime option below) to 120 seconds, if it is not set yet. 
+Commands affected: nearly all 
+
+Default: abort for commands specified using /script or /command; off for commands specified on input.
+
+confirm	off|on 
+
+Toggles confirmations (overwrite, etc.). 
+Commands affected: get, put 
+Default: off for commands specified using /script or /command; on for commands specified on input.
+
++++
+
+put 
+
+-transfer=<mode>	binary|ascii|automatic 
+Transfer mode: binary, ascii (text), automatic (by extension).
+
++++

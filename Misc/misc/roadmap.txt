@@ -1,0 +1,33 @@
+Mutually agreed Release Schedule:
+=======================================
+
+Task ID: 
+Module:
+Test Release Date:
+UAT Release Date:
+Live Release Date:
+No. of Iterations in Test: 
+No. of Iterations in UAT: 
+Priority: Low/Medium/High/ASAP
+
+
+Task Creation:
+=================
+
+Name of developers:
+svn commit paths:
+
+
+Other High priority Items from the point of view of Configuration Management
+================================================================================
+
+Separate Mails for Test and UAT deployment
+Eliminate production file reqs
+Environment management activities
+
+
+Test and UAT Deployment requests
+=========================================
+
+App Server Name:
+DB Server Name:

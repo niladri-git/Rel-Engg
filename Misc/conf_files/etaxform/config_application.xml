@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<generator>  
+
+  <!--Remember to turn this to "false" in live-->
+  <ssl>
+  	<trustAllHostNames>true</trustAllHostNames>
+  	<trustAllHttpsCertificates>true</trustAllHttpsCertificates>
+  </ssl>
+	<pagination>
+		<value>10</value>
+	</pagination>
+	<viewyear>
+		<value>3</value>
+	</viewyear>
+	<filepath>
+		<windows>D:\\Tomcat4\\webapps\\clients\\FORM\\</windows>
+		<unix>/usr/FORM/</unix>
+	</filepath>
+<zippath>
+<windows>c:\\i-admin\\product\\etaxform\\</windows>
+<unix>/usr/FORM/</unix>
+</zippath>
+</generator>
+
+

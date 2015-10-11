@@ -1,0 +1,3 @@
+Copy this files while adding new modules and creating war files.
+
+Also web.xml needs to be changed.

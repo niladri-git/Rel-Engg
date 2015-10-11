@@ -1,0 +1,73 @@
+Hi ,
+
+The requested task is deployed on testsub1.
+
+Regards
+-Niladri
+
+++++
+
+Hi  Pankaj,
+
+The requested task has been deployed on testsub1.
+
+Once it’s verified by the testing team, will move it to UAT.
+
+Regards
+-Niladri
+
++++
+
+Hi PSG Team,
+
+This is with reference to task id #1000005072
+
+Kindly approve this task for UAT server.
+
+
+Hi Oktarack ,
+
+After the approval is done. 
+
+Please upload the code in Task id-5072 to UAT Server .
+
+Description:- Backpay not appearing for Rehire in UAT
+
+Note- Please deploy the war file for the module , I already shared into my share location  below is the path.
+
+
+\\192.168.89.244\i-admin\Niladri\UAT_Deployments\16_09_2015\epayroll_5072\UATsub1\epayroll.war
+
+\\192.168.89.244\i-admin\Niladri\UAT_Deployments\16_09_2015\epayroll_5072\UATsub3\epayroll.war
+
+
+Regards
+-Niladri      
+
++++
+
+Hi Pankaj,
+
+Task ID: 1000005192  is created.
+
+Regards
+-Niladri
+
++++
+
+Hi Shivkumar,
+
+Task ID: 1000005193 and 5194  are created.
+
+Regards
+-Niladri
+
++++
+
+testehr:
+
+Mainlogin
+Outside
+Escheduler
+
++++
