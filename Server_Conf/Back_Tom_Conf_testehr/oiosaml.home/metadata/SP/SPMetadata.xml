@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?><md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata" entityID="iAdmin">
+   <md:SPSSODescriptor AuthnRequestsSigned="true" WantAssertionsSigned="true" protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+      <md:KeyDescriptor use="signing">
+         <ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+            <ds:X509Data>
+               <ds:X509Certificate>MIICIzCCAYygAwIBAgIGAS9CN9c7MA0GCSqGSIb3DQEBBQUAMCoxEzARBgNVBAoMCmtleW1hbmFn
+ZXIxEzARBgNVBAsMCm9pb3NhbWwtc3AwHhcNMTEwNDExMDE0MDQ2WhcNMjEwNDA4MDE0MDQ2WjA8
+MSUwIwYDVQQDDBxodHRwczovL3NhbWwuZWhyLmktYWRtaW4uY29tMRMwEQYDVQQLDApvaW9zYW1s
+LXNwMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCK4IOIj/rnXQTpuqm2ABakFlxSBEUOUBWM
+K6cPJmiAXDVZusHfeEBjrJ4cpNo80XpycYRMTz3IznN5wTc/L6FGcNSaHH+MlaBMmtR3gsG8yVZ4
+NvFAp3traK7O+dS1YHNfxcfvhX9tCJ+Go/N80ZHW3l8cIVuS/Dt3SBuLENnSLwIDAQABo0IwQDAd
+BgNVHQ4EFgQUsMhn8HRh/12DjPJAPb0Gwn7cty4wHwYDVR0jBBgwFoAUsMhn8HRh/12DjPJAPb0G
+wn7cty4wDQYJKoZIhvcNAQEFBQADgYEAg3xR/K1CrpGtUVPtVsXmpGnRcyFQB2Kt1x0ilC3AcAjN
+oGVj4+hngLaY2safnMyZkA4Qe6gXqbn7+Fk6hMPDzzdXUguAk0Dr+ec9Vf1ye2MhwjAAesT6Z7/i
+omPYQAbmCDepawbhzauZdKrCDjcoDmzLlSJe8RPPjROf3cvHqdA=</ds:X509Certificate>
+            </ds:X509Data>
+         </ds:KeyInfo>
+      </md:KeyDescriptor>
+      <md:KeyDescriptor use="encryption">
+         <ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+            <ds:X509Data>
+               <ds:X509Certificate>MIICIzCCAYygAwIBAgIGAS9CN9c7MA0GCSqGSIb3DQEBBQUAMCoxEzARBgNVBAoMCmtleW1hbmFn
+ZXIxEzARBgNVBAsMCm9pb3NhbWwtc3AwHhcNMTEwNDExMDE0MDQ2WhcNMjEwNDA4MDE0MDQ2WjA8
+MSUwIwYDVQQDDBxodHRwczovL3NhbWwuZWhyLmktYWRtaW4uY29tMRMwEQYDVQQLDApvaW9zYW1s
+LXNwMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCK4IOIj/rnXQTpuqm2ABakFlxSBEUOUBWM
+K6cPJmiAXDVZusHfeEBjrJ4cpNo80XpycYRMTz3IznN5wTc/L6FGcNSaHH+MlaBMmtR3gsG8yVZ4
+NvFAp3traK7O+dS1YHNfxcfvhX9tCJ+Go/N80ZHW3l8cIVuS/Dt3SBuLENnSLwIDAQABo0IwQDAd
+BgNVHQ4EFgQUsMhn8HRh/12DjPJAPb0Gwn7cty4wHwYDVR0jBBgwFoAUsMhn8HRh/12DjPJAPb0G
+wn7cty4wDQYJKoZIhvcNAQEFBQADgYEAg3xR/K1CrpGtUVPtVsXmpGnRcyFQB2Kt1x0ilC3AcAjN
+oGVj4+hngLaY2safnMyZkA4Qe6gXqbn7+Fk6hMPDzzdXUguAk0Dr+ec9Vf1ye2MhwjAAesT6Z7/i
+omPYQAbmCDepawbhzauZdKrCDjcoDmzLlSJe8RPPjROf3cvHqdA=</ds:X509Certificate>
+            </ds:X509Data>
+         </ds:KeyInfo>
+      </md:KeyDescriptor>
+      <md:ArtifactResolutionService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Artifact" Location="https://ehr.i-admin.com/mainlogin/saml/SAMLAssertionConsumer" index="0" isDefault="true"/>
+      <md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://ehr.i-admin.com/mainlogin/saml/LogoutServiceHTTPRedirect" ResponseLocation="https://ehr.i-admin.com/mainlogin/saml/LogoutServiceHTTPRedirectResponse"/>
+      <md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="https://ehr.i-admin.com/mainlogin/saml/LogoutServiceSOAP"/>
+      <md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://ehr.i-admin.com/mainlogin/saml/LogoutServiceHTTPPost" ResponseLocation="https://ehr.i-admin.com/mainlogin/saml/LogoutServiceHTTPRedirectResponse"/>
+      <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://ehr.i-admin.com/mainlogin/saml/SAMLAssertionConsumer" index="0" isDefault="true"/>
+      <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Artifact" Location="https://ehr.i-admin.com/mainlogin/saml/SAMLAssertionConsumer" index="1" isDefault="false"/>
+   </md:SPSSODescriptor>
+   <md:Organization>
+      <md:OrganizationName xml:lang="en">i-Admin</md:OrganizationName>
+      <md:OrganizationDisplayName xml:lang="en">i-Admin</md:OrganizationDisplayName>
+      <md:OrganizationURL xml:lang="en">http://www.i-admin.com</md:OrganizationURL>
+   </md:Organization>
+   <md:ContactPerson contactType="technical">
+      <md:Company>i-Admin</md:Company>
+      <md:EmailAddress>tag@i-admin.com</md:EmailAddress>
+   </md:ContactPerson>
+</md:EntityDescriptor>

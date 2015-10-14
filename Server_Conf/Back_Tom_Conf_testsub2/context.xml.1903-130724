@@ -1,0 +1,60 @@
+<!-- The contents of this file will be loaded for each web application -->
+<Context reloadable="true" crossContext="true">
+
+    <!-- Default set of monitored resources -->
+    <WatchedResource>WEB-INF/web.xml</WatchedResource>
+	
+    <!-- Uncomment this to disable session persistence across Tomcat restarts -->
+    <!--
+    <Manager pathname="" />
+    -->
+<Resource name="sso"
+auth="Container"
+type="javax.sql.DataSource"
+factory="org.apache.tomcat.dbcp.dbcp.BasicDataSourceFactory"
+username="sso"
+password="sso"
+driverClassName="oracle.jdbc.OracleDriver"
+url="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+maxWait="-1"
+removeAbandoned="true"
+maxActive="30"
+maxIdle="5"
+removeAbandonedTimeout="60"
+logAbandoned="true"/> 
+
+	<ResourceLink
+                global="portal"
+                name="portal"
+                type="javax.sql.DataSource"/>
+
+        <ResourceLink
+                global="mainportal"
+                name="mainportal"
+                type="javax.sql.DataSource"/>
+
+	<ResourceLink
+                global="sub1_portal"
+                name="sub1_portal"
+                type="javax.sql.DataSource"/>
+        <ResourceLink
+		global="ehr_tnl"
+		name="ehr_tnl"
+		type="javax.sql.DataSource"/>
+	<ResourceLink
+		global="epayroll_tnl"
+		name="epayroll_tnl"
+		type="javax.sql.DataSource"/>
+	<ResourceLink
+		global="etemplate_tnl"
+		name="etemplate_tnl"
+		type="javax.sql.DataSource"/>
+	<ResourceLink
+		global="ehr_mjnth"
+		name="ehr_mjnth"
+		type="javax.sql.DataSource"/>
+	<ResourceLink
+		global="epayroll_mjnth"
+		name="epayroll_mjnth"
+		type="javax.sql.DataSource"/>
+</Context>

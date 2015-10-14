@@ -1,0 +1,2866 @@
+<!-- Eample Server Configuration File -->
+<!-- Note that component elements are nested corresponding to their
+     parent-child relationships with each other -->
+
+<!-- A "Server" is a singleton element that represents the entire JVM,
+     which may contain one or more "Service" instances.  The Server
+     listens for a shutdown command on the indicated port.
+
+     Note:  A "Server" is not itself a "Container", so you may not
+     define subcomponents such as "Valves" or "Loggers" at this level.
+ -->
+
+<Server port="8005" shutdown="SHUTDOWN">
+
+  <!-- Comment these entries out to disable JMX MBeans support used for the 
+       administration web application -->
+  <Listener className="org.apache.catalina.core.AprLifecycleListener" />
+  <Listener className="org.apache.catalina.mbeans.ServerLifecycleListener" />
+  <Listener className="org.apache.catalina.mbeans.GlobalResourcesLifecycleListener" />
+  <Listener className="org.apache.catalina.storeconfig.StoreConfigLifecycleListener"/>
+
+  <!-- Global JNDI resources -->
+  <GlobalNamingResources>
+
+    <!-- Test entry for demonstration purposes -->
+    <Environment name="simpleValue" type="java.lang.Integer" value="30"/>
+
+    <!-- Editable user database that can also be used by
+         UserDatabaseRealm to authenticate users -->
+    <Resource name="UserDatabase" auth="Container"
+              type="org.apache.catalina.UserDatabase"
+       description="User database that can be updated and saved"
+           factory="org.apache.catalina.users.MemoryUserDatabaseFactory"
+          pathname="conf/tomcat-users.xml" />
+
+        <Resource
+                name="portal"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="portal"
+                password="portalqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="20"
+                minPoolSize="5"
+        acquireIncrement="5"/>
+        <Resource
+                name="mainportal"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="mainportal"
+                password="mainportalqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="20"
+                minPoolSize="5"
+        acquireIncrement="5"/>
+	<Resource
+                name="adpportal"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="adpportal"
+                password="adpportalqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="20"
+                minPoolSize="5"
+        acquireIncrement="5"/>
+
+        <Resource
+                name="sub1_portal"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="portal"
+                password="portalqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="20"
+                minPoolSize="5"
+        acquireIncrement="5"/>
+
+        <Resource
+		name="ehr_tnl"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="ehr_tnl"
+		password="ehr_tnl"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		maxPoolSize="10"
+		minPoolSize="2"
+	acquireIncrement="2"/>
+	<Resource
+		name="epayroll_tnl"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="epayroll_tnl"
+		password="epayroll_tnlqwsa"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		maxPoolSize="8"
+		minPoolSize="1"
+	acquireIncrement="2"/>
+        <Resource
+                name="etemplate_tnl"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="etemplate_tnl"
+                password="etemplate_tnlqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="8"
+                minPoolSize="1"
+        acquireIncrement="2"/>
+	<Resource
+		name="ehr_testingida"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="ehr_testingida"
+		password="ehr_testingidaqwsa"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		maxPoolSize="10"
+		minPoolSize="2"
+	acquireIncrement="2"/>
+	<Resource
+		name="epayroll_testingida"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="epayroll_testingida"
+		password="epayroll_testingidaqwsa"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		maxPoolSize="8"
+		minPoolSize="1"
+	acquireIncrement="2"/>
+        <Resource
+                name="etemplate_testingida"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="etemplate_testingida"
+                password="etemplate_testingidaqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="8"
+                minPoolSize="1"
+        acquireIncrement="2"/>
+        <Resource
+                name="etax_tnl"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="etax_tnl"
+                password="etax_tnlqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="8"
+                minPoolSize="1"
+        acquireIncrement="2"/>
+        <Resource
+                name="reportadmin"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="reportadmin"
+                password="reportadminqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="10"
+                minPoolSize="2"
+        acquireIncrement="2"/>
+        <Resource
+                name="ehr_mjnmy"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="ehr_mjnmy"
+                password="ehr_mjnmyqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="10"
+                minPoolSize="2"
+        acquireIncrement="2"/>
+        <Resource
+                name="epayroll_mjnmy"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="epayroll_mjnmy"
+                password="epayroll_mjnmyqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="10"
+                minPoolSize="2"
+        acquireIncrement="2"/>
+        <Resource
+                name="etemplate_mjnmy"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="etemplate_mjnmy"
+                password="etemplate_mjnmyqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="10"
+                minPoolSize="2"
+        acquireIncrement="2"/>
+        <Resource
+                name="etaxmy_mjnmy"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="etaxmy_mjnmy"
+                password="etaxmy_mjnmyqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="10"
+                minPoolSize="2"
+        acquireIncrement="2"/>
+        <Resource
+                name="ehr_mjntw"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="ehr_mjntw"
+                password="ehr_mjntwqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="10"
+                minPoolSize="2"
+        acquireIncrement="2"/>
+        <Resource
+                name="epayroll_mjntw"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="epayroll_mjntw"
+                password="epayroll_mjntwqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="10"
+                minPoolSize="2"
+        acquireIncrement="2"/>
+        <Resource
+                name="etemplate_mjntw"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="etemplate_mjntw"
+                password="etemplate_mjntwqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="10"
+                minPoolSize="2"
+        acquireIncrement="2"/>
+        <Resource
+                name="etaxtw_mjntw"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="etaxtw_mjntw"
+                password="etaxtw_mjntwqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="10"
+                minPoolSize="2"
+        acquireIncrement="2"/>
+        <Resource
+                name="ehr_mjngz"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="ehr_mjngz"
+                password="ehr_mjngzqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="10"
+                minPoolSize="2"
+        acquireIncrement="2"/>
+        <Resource
+                name="epayroll_mjngz"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="epayroll_mjngz"
+                password="epayroll_mjngzqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="10"
+                minPoolSize="2"
+        acquireIncrement="2"/>
+        <Resource
+                name="etemplate_mjngz"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="etemplate_mjngz"
+                password="etemplate_mjngzqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="10"
+                minPoolSize="2"
+        acquireIncrement="2"/>
+        <Resource
+                name="etaxchn_mjngz"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="etaxchn_mjngz"
+                password="etaxchn_mjngzqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="10"
+                minPoolSize="2"
+        acquireIncrement="2"/>
+        <Resource
+                name="ehr_mjnth"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="ehr_mjnth"
+                password="ehr_mjnthqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="10"
+                minPoolSize="2"
+        acquireIncrement="2"/>
+        <Resource
+                name="epayroll_mjnth"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="epayroll_mjnth"
+                password="epayroll_mjnthqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="10"
+                minPoolSize="2"
+        acquireIncrement="2"/>
+        <Resource
+                name="etemplate_mjnth"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="etemplate_mjnth"
+                password="etemplate_mjnthqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="10"
+                minPoolSize="2"
+        acquireIncrement="2"/>
+        <Resource
+                name="ehr_rdiin"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="ehr_rdiin"
+                password="ehr_rdiinqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="20"
+                minPoolSize="5"
+        acquireIncrement="5"/>
+        <Resource
+                name="epayroll_rdiin"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="epayroll_rdiin"
+                password="epayroll_rdiinqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="20"
+                minPoolSize="5"
+        acquireIncrement="5"/>
+        <Resource
+                name="etemplate_rdiin"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="etemplate_rdiin"
+                password="etemplate_rdiinqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="20"
+                minPoolSize="5"
+        acquireIncrement="5"/>
+        <Resource
+                name="ehr_testingmc"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="ehr_testingmc"
+                password="ehr_testingmcqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="20"
+                minPoolSize="5"
+        acquireIncrement="5"/>
+        <Resource
+                name="epayroll_testingmc"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="epayroll_testingmc"
+                password="epayroll_testingmcqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="20"
+                minPoolSize="5"
+        acquireIncrement="5"/>
+        <Resource
+                name="etemplate_testingmc"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="etemplate_testingmc"
+                password="etemplate_testingmcqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="20"
+                minPoolSize="5"
+        acquireIncrement="5"/>
+        <Resource
+                name="ehr_testingjp"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="ehr_testingjp"
+                password="ehr_testingjpqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="20"
+                minPoolSize="5"
+        acquireIncrement="5"/>
+        <Resource
+                name="epayroll_testingjp"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="epayroll_testingjp"
+                password="epayroll_testingjpqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="20"
+                minPoolSize="5"
+        acquireIncrement="5"/>
+        <Resource
+                name="etemplate_testingjp"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="etemplate_testingjp"
+                password="etemplate_testingjpqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="20"
+                minPoolSize="5"
+        acquireIncrement="5"/>
+        <Resource
+                name="ehr_gehkorii"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="ehr_gehkorii"
+                password="ehr_gehkoriiqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="20"
+                minPoolSize="5"
+        acquireIncrement="5"/>
+        <Resource
+                name="epayroll_gehkorii"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="epayroll_gehkorii"
+                password="epayroll_gehkoriiqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="20"
+                minPoolSize="5"
+        acquireIncrement="5"/>
+        <Resource
+                name="etemplate_gehkorii"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="etemplate_gehkorii"
+                password="etemplate_gehkoriiqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="20"
+                minPoolSize="5"
+        acquireIncrement="5"/>
+        <Resource
+                name="etaxhk_gehkorii"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="etaxhk_gehkorii"
+                password="etaxhk_gehkoriiqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="10"
+                minPoolSize="2"
+        acquireIncrement="2"/>
+        <Resource
+                name="etemplate_gehkorii"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="etemplate_gehkorii"
+                password="etemplate_gehkoriiqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="10"
+                minPoolSize="2"
+        acquireIncrement="2"/>
+        <Resource
+                name="ehr_medtronicsg"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="ehr_medtronicsg"
+                password="ehr_medtronicsgqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="10"
+                minPoolSize="2"
+        acquireIncrement="2"/>
+        <Resource
+                name="etemplate_medtronicsg"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="etemplate_medtronicsg"
+                password="etemplate_medtronicsgqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="10"
+                minPoolSize="2"
+        acquireIncrement="2"/>
+        <Resource
+                name="epayroll_medtronicsg"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="epayroll_medtronicsg"
+                password="epayroll_medtronicsgqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="10"
+                minPoolSize="2"
+        acquireIncrement="2"/>
+        <Resource
+                name="etax_medtronicsg"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="etax_medtronicsg"
+                password="etax_medtronicsgqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="10"
+                minPoolSize="2"
+        acquireIncrement="2"/>
+        <Resource
+                name="ehr_testingkr"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="ehr_testingkr"
+                password="ehr_testingkrqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="10"
+                minPoolSize="2"
+        acquireIncrement="2"/>
+	 <Resource
+                name="ehr_carestreamsg"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="ehr_carestreamsg"
+                password="ehr_carestreamsgqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="10"
+                minPoolSize="2"
+        acquireIncrement="2"/>
+        <Resource
+                name="etemplate_testingkr"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="etemplate_testingkr"
+                password="etemplate_testingkrqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="10"
+                minPoolSize="2"
+        acquireIncrement="2"/>
+        <Resource
+                name="epayroll_testingkr"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="epayroll_testingkr"
+                password="epayroll_testingkrqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="10"
+                minPoolSize="2"
+        acquireIncrement="2"/>
+        <Resource
+                name="ehr_testingaus"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="ehr_testingaus"
+                password="ehr_testingausqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="10"
+                minPoolSize="2"
+        acquireIncrement="2"/>
+        <Resource
+                name="etemplate_testingaus"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="etemplate_testingaus"
+                password="etemplate_testingausqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="10"
+                minPoolSize="2"
+        acquireIncrement="2"/>
+        <Resource
+                name="epayroll_testingaus"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="epayroll_testingaus"
+                password="epayroll_testingausqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="10"
+                minPoolSize="2"
+        acquireIncrement="2"/>
+		 <Resource
+                name="ehr_testingaus"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="ehr_testingaus"
+                password="ehr_testingausqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="10"
+                minPoolSize="2"
+        acquireIncrement="2"/>
+        <Resource
+                name="ehr_wdsg"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="ehr_wdsg"
+                password="ehr_wdsgqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="10"
+                minPoolSize="2"
+        acquireIncrement="2"/>
+<Resource
+                name="ehr_wdsg2"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="ehr_wdsg2"
+                password="ehr_wdsg2qwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="10"
+                minPoolSize="2"
+        acquireIncrement="2"/>
+<Resource
+                name="ehr_wdsg3"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="ehr_wdsg3"
+                password="ehr_wdsg3qwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="10"
+                minPoolSize="2"
+        acquireIncrement="2"/>
+<Resource
+                name="epayroll_wdsg"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="epayroll_wdsg"
+                password="epayroll_wdsgqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="10"
+                minPoolSize="2"
+        acquireIncrement="2"/>
+<Resource
+                name="epayroll_wdsg2"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="epayroll_wdsg2"
+                password="epayroll_wdsg2qwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="10"
+                minPoolSize="2"
+        acquireIncrement="2"/>
+<Resource
+                name="epayroll_wdsg3"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="epayroll_wdsg3"
+                password="epayroll_wdsg3qwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="10"
+                minPoolSize="2"
+        acquireIncrement="2"/>
+<Resource
+                name="etemplate_wdsg"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="etemplate_wdsg"
+                password="etemplate_wdsgqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="10"
+                minPoolSize="2"
+        acquireIncrement="2"/>
+<Resource
+                name="etemplate_wdsg2"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="etemplate_wdsg2"
+                password="etemplate_wdsg2qwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="10"
+                minPoolSize="2"
+        acquireIncrement="2"/>
+<Resource
+                name="etemplate_wdsg3"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="etemplate_wdsg3"
+                password="etemplate_wdsg3qwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="10"
+                minPoolSize="2"
+        acquireIncrement="2"/>
+<Resource
+                name="ehr_momentivehk"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="ehr_momentivehk"
+                password="ehr_momentivehkqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="20"
+                minPoolSize="5"
+        acquireIncrement="5"/>
+<Resource
+                name="epayroll_momentivehk"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="epayroll_momentivehk"
+                password="epayroll_momentivehkqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="20"
+                minPoolSize="5"
+        acquireIncrement="5"/>
+<Resource
+                name="etemplate_momentivehk"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="etemplate_momentivehk"
+                password="etemplate_momentivehkqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="20"
+                minPoolSize="5"
+        acquireIncrement="5"/>
+
+<Resource
+                name="etaxhk_momentivehk"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="etaxhk_momentivehk"
+                password="etaxhk_momentivehkqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="20"
+                minPoolSize="5"
+        acquireIncrement="5"/>
+
+<Resource
+                name="ehr_wdsg"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="ehr_wdsg"
+                password="ehr_wdsgqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="20"
+                minPoolSize="5"
+        acquireIncrement="5"/>
+<Resource
+                name="ehr_wdsg2"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="ehr_wdsg2"
+                password="ehr_wdsg2qwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="20"
+                minPoolSize="5"
+        acquireIncrement="5"/>
+<Resource
+                name="ehr_wdsg3"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="ehr_wdsg3"
+                password="ehr_wdsg3qwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="20"
+                minPoolSize="5"
+        acquireIncrement="5"/>
+<Resource
+                name="etemplate_uhra2th"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="etemplate_uhra2th"
+                password="etemplate_uhra2thqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="20"
+                minPoolSize="5"
+        acquireIncrement="5"/>
+<Resource
+                name="epayroll_uhra2th"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="epayroll_uhra2th"
+                password="epayroll_uhra2thqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="20"
+                minPoolSize="5"
+        acquireIncrement="5"/>
+<Resource
+                name="ehr_uhra2th"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="ehr_uhra2th"
+                password="ehr_uhra2thqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="20"
+                minPoolSize="5"
+        acquireIncrement="5"/>
+<Resource
+                name="ehr_commvaultgz"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="ehr_commvaultgz"
+                password="ehr_commvaultgzqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="20"
+                minPoolSize="5"
+        acquireIncrement="5"/>
+<Resource
+                name="epayroll_commvaultgz"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="epayroll_commvaultgz"
+                password="epayroll_commvaultgzqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="20"
+                minPoolSize="5"
+        acquireIncrement="5"/>
+<Resource
+                name="etemplate_commvaultgz"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="etemplate_commvaultgz"
+                password="etemplate_commvaultgzqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="20"
+                minPoolSize="5"
+        acquireIncrement="5"/>
+<Resource
+                name="ehr_commvaultmy"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="ehr_commvaultmy"
+                password="ehr_commvaultmyqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="20"
+                minPoolSize="5"
+        acquireIncrement="5"/>
+<Resource
+                name="epayroll_commvaultmy"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="epayroll_commvaultmy"
+                password="epayroll_commvaultmyqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="20"
+                minPoolSize="5"
+        acquireIncrement="5"/>
+<Resource
+                name="etemplate_commvaultmy"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="etemplate_commvaultmy"
+                password="etemplate_commvaultmyqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="20"
+                minPoolSize="5"
+        acquireIncrement="5"/>
+<Resource
+                name="ehr_hermestw2"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="ehr_hermestw2"
+                password="ehr_hermestw2qwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="20"
+                minPoolSize="5"
+        acquireIncrement="5"/>
+<Resource
+                name="epayroll_hermestw2"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="epayroll_hermestw2"
+                password="epayroll_hermestw2qwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="20"
+                minPoolSize="5"
+        acquireIncrement="5"/>
+<Resource
+                name="etemplate_hermestw2"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="etemplate_hermestw2"
+                password="etemplate_hermestw2qwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="20"
+                minPoolSize="5"
+        acquireIncrement="5"/>
+<Resource
+                name="ehr_abtw"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="ehr_abtw"
+                password="ehr_abtwqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="20"
+                minPoolSize="5"
+        acquireIncrement="5"/>
+<Resource
+                name="epayroll_abtw"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="epayroll_abtw"
+                password="epayroll_abtwqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="20"
+                minPoolSize="5"
+        acquireIncrement="5"/>
+<Resource
+                name="ehr_bat1cn"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="ehr_bat1cn"
+                password="ehr_bat1cnqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="8"
+                minPoolSize="1"
+        acquireIncrement="2"/>
+<Resource
+                name="epayroll_bat1cn"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="epayroll_bat1cn"
+                password="epayroll_bat1cnqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="8"
+                minPoolSize="1"
+        acquireIncrement="2"/>
+<Resource
+                name="etemplate_bat1cn"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="etemplate_bat1cn"
+                password="etemplate_bat1cnqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="8"
+                minPoolSize="1"
+        acquireIncrement="2"/>
+<Resource
+                name="ehr_abchk"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="ehr_abchk"
+                password="ehr_abchkqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="8"
+                minPoolSize="1"
+        acquireIncrement="2"/>
+<Resource
+                name="epayroll_abchk"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="epayroll_abchk"
+                password="epayroll_abchkqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="8"
+                minPoolSize="1"
+        acquireIncrement="2"/>
+<Resource
+                name="etemplate_abchk"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="etemplate_abchk"
+                password="etemplate_abchkqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="8"
+                minPoolSize="1"
+        acquireIncrement="2"/>
+<Resource
+                name="ehr_bat1hk"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="ehr_bat1hk"
+                password="ehr_bat1hkqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="10"
+                minPoolSize="2"
+        acquireIncrement="2"/>
+<Resource
+                name="epayroll_bat1hk"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="epayroll_bat1hk"
+                password="epayroll_bat1hkqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="10"
+                minPoolSize="2"
+        acquireIncrement="2"/>
+<Resource
+                name="ehr_bat2hk"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="ehr_bat2hk"
+                password="ehr_bat2hkqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="10"
+                minPoolSize="2"
+        acquireIncrement="2"/>
+<Resource
+                name="epayroll_bat2hk"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="epayroll_bat2hk"
+                password="epayroll_bat2hkqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="10"
+                minPoolSize="2"
+        acquireIncrement="2"/>
+<Resource
+                name="ehr_bat3hk"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="ehr_bat3hk"
+                password="ehr_bat3hkqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="10"
+                minPoolSize="2"
+        acquireIncrement="2"/>
+<Resource
+                name="epayroll_bat3hk"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="epayroll_bat3hk"
+                password="epayroll_bat3hkqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="10"
+                minPoolSize="2"
+        acquireIncrement="2"/>
+
+	<Resource
+		name="ehr_testmy"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="ehr_testmy"
+		password="ehr_testmyqwsa"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		maxPoolSize="10"
+		minPoolSize="2"
+	acquireIncrement="2"/>
+	<Resource
+		name="epayroll_testmy"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="epayroll_testmy"
+		password="epayroll_testmyqwsa"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		maxPoolSize="8"
+		minPoolSize="1"
+	acquireIncrement="2"/>
+	<Resource
+		name="etemplate_testmy"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="etemplate_testmy"
+		password="etemplate_testmyqwsa"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		maxPoolSize="5"
+		minPoolSize="1"
+	acquireIncrement="1"/>
+	<Resource
+		name="etax_bnl"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="etax_bnl"
+		password="etax_bnlqwsa"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		maxPoolSize="8"
+		minPoolSize="1"
+	acquireIncrement="2"/>
+	<Resource
+		name="ehr_bnl"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="ehr_bnl"
+		password="ehr_bnlqwsa"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		maxPoolSize="10"
+		minPoolSize="2"
+	acquireIncrement="2"/>
+	<Resource
+		name="epayroll_bnl"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="epayroll_bnl"
+		password="epayroll_bnlqwsa"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		maxPoolSize="8"
+		minPoolSize="1"
+	acquireIncrement="2"/>
+	<Resource
+		name="etemplate_bnl"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="etemplate_bnl"
+		password="etemplate_bnlqwsa"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		maxPoolSize="5"
+		minPoolSize="1"
+	acquireIncrement="1"/>
+	<Resource
+		name="ehr_coatsth"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="ehr_coatsth"
+		password="ehr_coatsthqwsa"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		maxPoolSize="10"
+		minPoolSize="2"
+	acquireIncrement="2"/>
+	<Resource
+		name="epayroll_coatsth"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="epayroll_coatsth"
+		password="epayroll_coatsthqwsa"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		maxPoolSize="8"
+		minPoolSize="1"
+	acquireIncrement="2"/>
+	<Resource
+		name="ehr_coatsth"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="ehr_coatsth"
+		password="ehr_coatsthqwsa"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		maxPoolSize="10"
+		minPoolSize="2"
+	acquireIncrement="2"/>
+	<Resource
+		name="epayroll_coatsth"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="epayroll_coatsth"
+		password="epayroll_coatsthqwsa"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		maxPoolSize="8"
+		minPoolSize="1"
+	acquireIncrement="2"/>
+	<Resource
+		name="etemplate_coatsth"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="etemplate_coatsth"
+		password="etemplate_coatsthqwsa"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		maxPoolSize="5"
+		minPoolSize="1"
+	acquireIncrement="1"/>
+	<Resource
+		name="ehr_oraclesg"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="ehr_oraclesg"
+		password="ehr_oraclesg"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		
+		maxPoolSize="10"
+		minPoolSize="2"
+	acquireIncrement="2"/>
+	<Resource
+		name="epayroll_oraclesg"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="epayroll_oraclesg"
+		password="epayroll_oraclesg"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		maxPoolSize="8"
+		minPoolSize="1"
+	acquireIncrement="2"/>
+	<Resource
+		name="etemplate_oraclesg"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="etemplate_oraclesg"
+		password="etemplate_oraclesg"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		maxPoolSize="5"
+		minPoolSize="1"
+	acquireIncrement="1"/>
+<Resource
+                name="etax_oraclesg"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="etax_oraclesg"
+                password="etax_oraclesg"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="5"
+                minPoolSize="1"
+        acquireIncrement="1"/>
+	<Resource
+		name="ehr_cloudfxid"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="ehr_cloudfxid"
+		password="ehr_cloudfxidqwsa"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		maxPoolSize="10"
+		minPoolSize="2"
+	acquireIncrement="2"/>
+	<Resource
+		name="epayroll_cloudfxid"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="epayroll_cloudfxid"
+		password="epayroll_cloudfxidqwsa"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		maxPoolSize="8"
+		minPoolSize="1"
+	acquireIncrement="2"/>
+	<Resource
+		name="etemplate_cloudfxid"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="etemplate_cloudfxid"
+		password="etemplate_cloudfxidqwsa"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		maxPoolSize="5"
+		minPoolSize="1"
+	acquireIncrement="1"/>
+	<Resource
+		name="ehr_rimau"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="ehr_rimau"
+		password="ehr_rimauqwsa"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		maxPoolSize="10"
+		minPoolSize="2"
+	acquireIncrement="2"/>
+	<Resource
+		name="epayroll_rimau"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="epayroll_rimau"
+		password="epayroll_rimauqwsa"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		maxPoolSize="8"
+		minPoolSize="1"
+	acquireIncrement="2"/>
+	<Resource
+		name="etemplate_rimau"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="etemplate_rimau"
+		password="etemplate_rimauqwsa"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		maxPoolSize="5"
+		minPoolSize="1"
+	acquireIncrement="1"/>
+	<Resource
+		name="ehr_altairsg"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="ehr_altairsg"
+		password="ehr_altairsgqwsa"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		maxPoolSize="10"
+		minPoolSize="2"
+	acquireIncrement="2"/>
+	<Resource
+		name="epayroll_altairsg"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="epayroll_altairsg"
+		password="epayroll_altairsgqwsa"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		maxPoolSize="8"
+		minPoolSize="1"
+	acquireIncrement="2"/>
+	<Resource
+		name="etemplate_altairsg"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="etemplate_altairsg"
+		password="etemplate_altairsgqwsa"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		maxPoolSize="5"
+		minPoolSize="1"
+	acquireIncrement="1"/>
+	<Resource
+		name="ehr_syngentasg"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="ehr_syngentasg"
+		password="ehr_syngentasgqwsa"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		maxPoolSize="10"
+		minPoolSize="2"
+	acquireIncrement="2"/>
+	<Resource
+		name="epayroll_syngentasg"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="epayroll_syngentasg"
+		password="epayroll_syngentasgqwsa"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		maxPoolSize="8"
+		minPoolSize="1"
+	acquireIncrement="2"/>
+	<Resource
+		name="etemplate_syngentasg"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="etemplate_syngentasg"
+		password="etemplate_syngentasgqwsa"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		maxPoolSize="5"
+		minPoolSize="1"
+	acquireIncrement="1"/>
+	<Resource
+		name="ehr_syngenta2sg"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="ehr_syngenta2sg"
+		password="ehr_syngenta2sgqwsa"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		maxPoolSize="10"
+		minPoolSize="2"
+	acquireIncrement="2"/>
+	<Resource
+		name="epayroll_syngenta2sg"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="epayroll_syngenta2sg"
+		password="epayroll_syngenta2sgqwsa"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		maxPoolSize="8"
+		minPoolSize="1"
+	acquireIncrement="2"/>
+	<Resource
+		name="etemplate_syngenta2sg"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="etemplate_syngenta2sg"
+		password="etemplate_syngenta2sgqwsa"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		maxPoolSize="5"
+		minPoolSize="1"
+	acquireIncrement="1"/>
+	<Resource
+		name="ehr_syngenta3sg"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="ehr_syngenta3sg"
+		password="ehr_syngenta3sgqwsa"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		maxPoolSize="10"
+		minPoolSize="2"
+	acquireIncrement="2"/>
+	<Resource
+		name="epayroll_syngenta3sg"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="epayroll_syngenta3sg"
+		password="epayroll_syngenta3sgqwsa"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		maxPoolSize="8"
+		minPoolSize="1"
+	acquireIncrement="2"/>
+	<Resource
+		name="etemplate_syngenta3sg"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="etemplate_syngenta3sg"
+		password="etemplate_syngenta3sgqwsa"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		maxPoolSize="5"
+		minPoolSize="1"
+	acquireIncrement="1"/>
+	<Resource
+		name="ehr_sipcoth"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="ehr_sipcoth"
+		password="ehr_sipcothqwsa"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		maxPoolSize="10"
+		minPoolSize="2"
+	acquireIncrement="2"/>
+	<Resource
+		name="epayroll_sipcoth"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="epayroll_sipcoth"
+		password="epayroll_sipcothqwsa"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		maxPoolSize="8"
+		minPoolSize="1"
+	acquireIncrement="2"/>
+	<Resource
+		name="etemplate_sipcoth"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="etemplate_sipcoth"
+		password="etemplate_sipcothqwsa"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		maxPoolSize="5"
+		minPoolSize="1"
+	acquireIncrement="1"/>
+	<Resource
+		name="ehr_salesforcesg"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="ehr_salesforcesg"
+		password="ehr_salesforcesgqwsa"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		maxPoolSize="10"
+		minPoolSize="2"
+	acquireIncrement="2"/>
+	<Resource
+		name="epayroll_salesforcesg"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="epayroll_salesforcesg"
+		password="epayroll_salesforcesgqwsa"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		maxPoolSize="8"
+		minPoolSize="1"
+	acquireIncrement="2"/>
+	<Resource
+		name="etemplate_salesforcesg"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="etemplate_salesforcesg"
+		password="etemplate_salesforcesgqwsa"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		maxPoolSize="5"
+		minPoolSize="1"
+	acquireIncrement="1"/>
+	<Resource
+		name="ehr_vmwaresg"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="ehr_vmwaresg"
+		password="ehr_vmwaresgqwsa"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		maxPoolSize="10"
+		minPoolSize="2"
+	acquireIncrement="2"/>
+	<Resource
+		name="epayroll_vmwaresg"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="epayroll_vmwaresg"
+		password="epayroll_vmwaresgqwsa"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		maxPoolSize="8"
+		minPoolSize="1"
+	acquireIncrement="2"/>
+ <Resource
+                name="etemplate_vmwaresg"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="etemplate_vmwaresg"
+                password="etemplate_vmwaresgqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="5"
+                minPoolSize="1"
+        acquireIncrement="1"/>
+	<Resource
+		name="ehr_linkedlnsg"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="ehr_linkedlnsg"
+		password="ehr_linkedlnsgqwsa"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		maxPoolSize="10"
+		minPoolSize="2"
+	acquireIncrement="2"/>
+	<Resource
+		name="epayroll_linkedlnsg"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="epayroll_linkedlnsg"
+		password="epayroll_linkedlnsgqwsa"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		maxPoolSize="8"
+		minPoolSize="1"
+	acquireIncrement="2"/>
+	<Resource
+		name="etemplate_linkedlnsg"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="etemplate_linkedlnsg"
+		password="etemplate_linkedlnsgqwsa"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		maxPoolSize="5"
+		minPoolSize="1"
+	acquireIncrement="1"/>
+	<Resource
+		name="ehr_wpth"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="ehr_wpth"
+		password="ehr_wpthqwsa"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		maxPoolSize="10"
+		minPoolSize="2"
+	acquireIncrement="2"/>
+	<Resource
+		name="epayroll_wpth"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="epayroll_wpth"
+		password="epayroll_wpthqwsa"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		maxPoolSize="8"
+		minPoolSize="1"
+	acquireIncrement="2"/>
+	<Resource
+		name="etemplate_wpth"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="etemplate_wpth"
+		password="etemplate_wpthqwsa"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		maxPoolSize="5"
+		minPoolSize="1"
+	acquireIncrement="1"/>
+	<Resource
+                name="ehr_mastercardsg"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="ehr_mastercardsg"
+                password="ehr_mastercardsgqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="10"
+                minPoolSize="2"
+        acquireIncrement="2"/>
+        <Resource
+                name="epayroll_mastercardsg"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="epayroll_mastercardsg"
+                password="epayroll_mastercardsgqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="8"
+                minPoolSize="1"
+        acquireIncrement="2"/>
+        <Resource
+                name="etemplate_mastercardsg"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="etemplate_mastercardsg"
+                password="etemplate_mastercardsgqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="5"
+                minPoolSize="1"
+       acquireIncrement="1"/>
+	<Resource
+                name="ehr_absg"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="ehr_absg"
+                password="ehr_absgqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="10"
+                minPoolSize="2"
+        acquireIncrement="2"/>
+        <Resource
+                name="epayroll_absg"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="epayroll_absg"
+                password="epayroll_absgqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="8"
+                minPoolSize="1"
+        acquireIncrement="2"/>
+        <Resource
+                name="etax_absg"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="etax_absg"
+                password="etax_absgqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="5"
+                minPoolSize="1"
+       acquireIncrement="1"/>
+	<Resource
+                name="epayroll_amexth"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="epayroll_amexth"
+                password="epayroll_amexthqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="8"
+                minPoolSize="1"
+        acquireIncrement="2"/>
+        <Resource
+                name="ehr_amexth"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="ehr_amexth"
+                password="ehr_amexthqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="5"
+                minPoolSize="1"
+       acquireIncrement="1"/>
+	<Resource
+                name="epayroll_uhra2th"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="epayroll_uhra2th"
+                password="epayroll_uhra2thqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="10"
+                minPoolSize="2"
+        acquireIncrement="2"/>
+
+	 <Resource
+                name="ehr_uhra2th"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="ehr_uhra2th"
+                password="ehr_uhra2thqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="5"
+                minPoolSize="1"
+       acquireIncrement="1"/>
+	<Resource
+                name="etemplate_uhra2th"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="etemplate_uhra2th"
+                password="etemplate_uhra2th"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="5"
+                minPoolSize="1"
+       acquireIncrement="1"/>
+	 <Resource
+                name="epayroll_cloudfxid"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="epayroll_cloudfxid"
+                password="epayroll_cloudfxidqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="10"
+                minPoolSize="2"
+        acquireIncrement="2"/>
+         <Resource
+                name="ehr_cloudfxid"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="ehr_cloudfxid"
+                password="ehr_cloudfxidqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="5"
+                minPoolSize="1"
+       acquireIncrement="1"/>
+
+        <Resource
+                name="etemplate_cloudfxid"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="etemplate_cloudfxid"
+                password="etemplate_cloudfxid"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="5"
+                minPoolSize="1"
+       acquireIncrement="1"/>
+	<Resource
+                name="ehr_bmshk"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="ehr_bmshk"
+                password="ehr_bmshkqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="5"
+                minPoolSize="1"
+       acquireIncrement="1"/>
+        <Resource
+                name="epayroll_bmshk"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="epayroll_bmshk"
+                password="epayroll_bmshkqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="5"
+                minPoolSize="1"
+       acquireIncrement="1"/>
+	<Resource
+                name="ehr_michaelindo"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="ehr_michaelindo"
+                password="ehr_michaelindoqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="5"
+                minPoolSize="1"
+       acquireIncrement="1"/>
+        <Resource
+                name="epayroll_michaelindo"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="epayroll_michaelindo"
+                password="epayroll_michaelindoqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="5"
+                minPoolSize="1"
+       acquireIncrement="1"/>
+	<Resource
+                name="etemplate_michaelindo"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="etemplate_michaelindo"
+                password="etemplate_michaelindoqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="5"
+                minPoolSize="1"
+       acquireIncrement="1"/>
+	<Resource
+                name="ehr_lenovohk"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="ehr_lenovohk"
+                password="ehr_lenovohkqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="5"
+                minPoolSize="1"
+       acquireIncrement="1"/>
+        <Resource
+                name="epayroll_lenovohk"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="epayroll_lenovohk"
+                password="epayroll_lenovohkqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="5"
+                minPoolSize="1"
+       acquireIncrement="1"/>
+
+ <Resource
+                name="ehr_syngenta2sg"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="ehr_syngenta2sg"
+                password="ehr_syngenta2sgqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="5"
+                minPoolSize="1"
+       acquireIncrement="1"/>
+
+        <Resource
+                name="epayroll_syngenta2sg"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="epayroll_syngenta2sg"
+                password="epayroll_syngenta2sgqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="5"
+                minPoolSize="1"
+       acquireIncrement="1"/>
+
+	<Resource
+                name="ehr_vmwarecn"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="ehr_vmwarecn"
+                password="ehr_vmwarecnqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="5"
+                minPoolSize="1"
+       acquireIncrement="1"/>
+
+        <Resource
+                name="epayroll_vmwarecn"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="epayroll_vmwarecn"
+                password="epayroll_vmwarecnqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="5"
+                minPoolSize="1"
+       acquireIncrement="1"/>
+
+	<Resource
+                name="ehr_synapticssh"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="ehr_synapticssh"
+                password="ehr_synapticsshqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="5"
+                minPoolSize="1"
+       acquireIncrement="1"/>
+
+        <Resource
+                name="epayroll_synapticssh"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="epayroll_synapticssh"
+                password="epayroll_synapticsshqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="5"
+                minPoolSize="1"
+       acquireIncrement="1"/>
+
+        <Resource
+                name="etemplate_synapticssh"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="etemplate_synapticssh"
+                password="etemplate_synapticsshqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="5"
+                minPoolSize="1"
+       acquireIncrement="1"/>
+		<Resource
+		name="ehr_carestreamsg"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="ehr_carestreamsg"
+		password="ehr_carestreamsgqwsa"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		maxPoolSize="10"
+		minPoolSize="2"
+	acquireIncrement="2"/>
+	<Resource
+		name="epayroll_carestreamsg"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="epayroll_carestreamsg"
+		password="epayroll_carestreamsgqwsa"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		maxPoolSize="8"
+		minPoolSize="1"
+	acquireIncrement="2"/>	   
+	<Resource
+		name="ehr_geioth"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="ehr_geioth"
+		password="ehr_geiothqwsa"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		maxPoolSize="10"
+		minPoolSize="2"
+	acquireIncrement="2"/>
+	<Resource
+		name="epayroll_geioth"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="epayroll_geioth"
+		password="epayroll_geiothqwsa"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		maxPoolSize="8"
+		minPoolSize="1"
+	acquireIncrement="2"/>
+	<Resource
+		name="ehr_medtronictw"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="ehr_medtronictw"
+		password="ehr_medtronictwqwsa"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		maxPoolSize="10"
+		minPoolSize="2"
+	acquireIncrement="2"/>
+	<Resource
+		name="epayroll_medtronictw"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="epayroll_medtronictw"
+		password="epayroll_medtronictwqwsa"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		maxPoolSize="8"
+		minPoolSize="1"
+	acquireIncrement="2"/>
+	<Resource
+		name="ehr_vmwaresg"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="ehr_vmwaresg"
+		password="ehr_vmwaresgqwsa"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		maxPoolSize="10"
+		minPoolSize="2"
+	acquireIncrement="2"/>
+	<Resource
+		name="epayroll_vmwaresg"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="epayroll_vmwaresg"
+		password="epayroll_vmwaresgqwsa"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		maxPoolSize="8"
+		minPoolSize="1"
+	acquireIncrement="2"/>	
+	<Resource
+		name="ehr_eastportsg5"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="ehr_eastportsg5"
+		password="ehr_eastportsg5qwsa"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		maxPoolSize="10"
+		minPoolSize="2"
+	acquireIncrement="2"/>
+	<Resource
+		name="epayroll_eastportsg5"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="epayroll_eastportsg5"
+		password="epayroll_eastportsg5qwsa"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		maxPoolSize="8"
+		minPoolSize="1"
+	acquireIncrement="2"/>
+	<Resource
+		name="ehr_schedule"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="ehr_schedule"
+		password="ehr_scheduleqwsa"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		maxPoolSize="10"
+		minPoolSize="2"
+	acquireIncrement="2"/>
+	<Resource
+		name="epayroll_schedule"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="epayroll_schedule"
+		password="epayroll_scheduleqwsa"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		maxPoolSize="8"
+		minPoolSize="1"
+	acquireIncrement="2"/>	
+	<Resource
+		name="ehr_uhghk2"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="ehr_uhghk2"
+		password="ehr_uhghk2qwsa"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		maxPoolSize="10"
+		minPoolSize="2"
+	acquireIncrement="2"/>
+	<Resource
+		name="epayroll_uhghk2"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="epayroll_uhghk2"
+		password="epayroll_uhghk2qwsa"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		maxPoolSize="8"
+		minPoolSize="1"
+	acquireIncrement="2"/>
+	<Resource
+		name="ehr_energizer3hk"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="ehr_energizer3hk"
+		password="ehr_energizer3hkqwsa"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		maxPoolSize="10"
+		minPoolSize="2"
+	acquireIncrement="2"/>
+	<Resource
+		name="epayroll_energizer3hk"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="epayroll_energizer3hk"
+		password="epayroll_energizer3hkqwsa"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		maxPoolSize="8"
+		minPoolSize="1"
+	acquireIncrement="2"/>
+
+	<Resource
+		name="ehr_verticurlin"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="ehr_verticurlin"
+		password="ehr_verticurlinqwsa"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		maxPoolSize="10"
+		minPoolSize="2"
+	acquireIncrement="2"/>
+	<Resource
+		name="epayroll_verticurlin"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="epayroll_verticurlin"
+		password="epayroll_verticurlinqwsa"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		maxPoolSize="8"
+		minPoolSize="1"
+	acquireIncrement="2"/>
+	<Resource
+		name="etemplate_verticurlin"
+		auth="Container"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		user="etemplate_verticurlin"
+		password="etemplate_verticurlin"
+		driverClass="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+		maxIdleTime="60"
+		maxPoolSize="5"
+		minPoolSize="1"
+	acquireIncrement="1"/>
+</GlobalNamingResources>
+
+  <!-- A "Service" is a collection of one or more "Connectors" that share
+       a single "Container" (and therefore the web applications visible
+       within that Container).  Normally, that Container is an "Engine",
+       but this is not required.
+
+       Note:  A "Service" is not itself a "Container", so you may not
+       define subcomponents such as "Valves" or "Loggers" at this level.
+   -->
+
+  <!-- Define the Tomcat Stand-Alone Service -->
+  <Service name="Catalina">
+
+    <!-- A "Connector" represents an endpoint by which requests are received
+         and responses are returned.  Each Connector passes requests on to the
+         associated "Container" (normally an Engine) for processing.
+
+         By default, a non-SSL HTTP/1.1 Connector is established on port 8080.
+         You can also enable an SSL HTTP/1.1 Connector on port 8443 by
+         following the instructions below and uncommenting the second Connector
+         entry.  SSL support requires the following steps (see the SSL Config
+         HOWTO in the Tomcat 5 documentation bundle for more detailed
+         instructions):
+         * If your JDK version 1.3 or prior, download and install JSSE 1.0.2 or
+           later, and put the JAR files into "$JAVA_HOME/jre/lib/ext".
+         * Execute:
+             %JAVA_HOME%\bin\keytool -genkey -alias tomcat -keyalg RSA (Windows)
+             $JAVA_HOME/bin/keytool -genkey -alias tomcat -keyalg RSA  (Unix)
+           with a password value of "changeit" for both the certificate and
+           the keystore itself.
+
+         By default, DNS lookups are enabled when a web application calls
+         request.getRemoteHost().  This can have an adverse impact on
+         performance, so you can disable it by setting the
+         "enableLookups" attribute to "false".  When DNS lookups are disabled,
+         request.getRemoteHost() will return the String version of the
+         IP address of the remote client.
+    -->
+
+    <!-- Define a non-SSL HTTP/1.1 Connector on port 8080 -->
+    <Connector port="8080" maxHttpHeaderSize="8192"
+               maxThreads="150" minSpareThreads="25" maxSpareThreads="75"
+               enableLookups="false" redirectPort="8443" acceptCount="100"
+               connectionTimeout="20000" disableUploadTimeout="true" URIEncoding="UTF-8" />
+    <!-- Note : To disable connection timeouts, set connectionTimeout value
+     to 0 -->
+	
+	<!-- Note : To use gzip compression you could set the following properties :
+	
+			   compression="on" 
+			   compressionMinSize="2048" 
+			   noCompressionUserAgents="gozilla, traviata" 
+			   compressableMimeType="text/html,text/xml"
+	-->
+
+    <!-- Define a SSL HTTP/1.1 Connector on port 8443 -->
+    <!--
+    <Connector port="8443" maxHttpHeaderSize="8192"
+               maxThreads="150" minSpareThreads="25" maxSpareThreads="75"
+               enableLookups="false" disableUploadTimeout="true"
+               acceptCount="100" scheme="https" secure="true"
+               clientAuth="false" sslProtocol="TLS" />
+    -->
+
+    <!-- Define an AJP 1.3 Connector on port 8009 -->
+    <Connector port="8009" 
+               enableLookups="false" redirectPort="8443" protocol="AJP/1.3" URIEncoding="UTF-8" />
+
+    <!-- Define a Proxied HTTP/1.1 Connector on port 8082 -->
+    <!-- See proxy documentation for more information about using this. -->
+    <!--
+    <Connector port="8082" 
+               maxThreads="150" minSpareThreads="25" maxSpareThreads="75"
+               enableLookups="false" acceptCount="100" connectionTimeout="20000"
+               proxyPort="80" disableUploadTimeout="true" />
+    -->
+
+    <!-- An Engine represents the entry point (within Catalina) that processes
+         every request.  The Engine implementation for Tomcat stand alone
+         analyzes the HTTP headers included with the request, and passes them
+         on to the appropriate Host (virtual host). -->
+
+    <!-- You should set jvmRoute to support load-balancing via AJP ie :
+    <Engine name="Standalone" defaultHost="localhost" jvmRoute="jvm1">         
+    --> 
+         
+    <!-- Define the top level container in our container hierarchy -->
+    <Engine name="Catalina" defaultHost="localhost">
+
+      <!-- The request dumper valve dumps useful debugging information about
+           the request headers and cookies that were received, and the response
+           headers and cookies that were sent, for all requests received by
+           this instance of Tomcat.  If you care only about requests to a
+           particular virtual host, or a particular application, nest this
+           element inside the corresponding <Host> or <Context> entry instead.
+
+           For a similar mechanism that is portable to all Servlet 2.4
+           containers, check out the "RequestDumperFilter" Filter in the
+           example application (the source for this filter may be found in
+           "$CATALINA_HOME/webapps/examples/WEB-INF/classes/filters").
+
+           Request dumping is disabled by default.  Uncomment the following
+           element to enable it. -->
+      <!--
+      <Valve className="org.apache.catalina.valves.RequestDumperValve"/>
+      -->
+
+      <!-- Because this Realm is here, an instance will be shared globally -->
+
+      <!-- This Realm uses the UserDatabase configured in the global JNDI
+           resources under the key "UserDatabase".  Any edits
+           that are performed against this UserDatabase are immediately
+           available for use by the Realm.  -->
+      <Realm className="org.apache.catalina.realm.UserDatabaseRealm"
+             resourceName="UserDatabase"/>
+
+      <!-- Comment out the old realm but leave here for now in case we
+           need to go back quickly -->
+      <!--
+      <Realm className="org.apache.catalina.realm.MemoryRealm" />
+      -->
+
+      <!-- Replace the above Realm with one of the following to get a Realm
+           stored in a database and accessed via JDBC -->
+
+      <!--
+      <Realm  className="org.apache.catalina.realm.JDBCRealm"
+             driverName="org.gjt.mm.mysql.Driver"
+          connectionURL="jdbc:mysql://localhost/authority"
+         connectionName="test" connectionPassword="test"
+              userTable="users" userNameCol="user_name" userCredCol="user_pass"
+          userRoleTable="user_roles" roleNameCol="role_name" />
+      -->
+
+      <!--
+      <Realm  className="org.apache.catalina.realm.JDBCRealm"
+             driverName="oracle.jdbc.driver.OracleDriver"
+          connectionURL="jdbc:oracle:thin:@ntserver:1521:ORCL"
+         connectionName="scott" connectionPassword="tiger"
+              userTable="users" userNameCol="user_name" userCredCol="user_pass"
+          userRoleTable="user_roles" roleNameCol="role_name" />
+      -->
+
+      <!--
+      <Realm  className="org.apache.catalina.realm.JDBCRealm"
+             driverName="sun.jdbc.odbc.JdbcOdbcDriver"
+          connectionURL="jdbc:odbc:CATALINA"
+              userTable="users" userNameCol="user_name" userCredCol="user_pass"
+          userRoleTable="user_roles" roleNameCol="role_name" />
+      -->
+
+      <!-- Define the default virtual host
+           Note: XML Schema validation will not work with Xerces 2.2.
+       -->
+      <Host name="localhost" appBase="webapps"
+       unpackWARs="true" autoDeploy="true"
+       xmlValidation="false" xmlNamespaceAware="false">
+
+        <!-- Defines a cluster for this node,
+             By defining this element, means that every manager will be changed.
+             So when running a cluster, only make sure that you have webapps in there
+             that need to be clustered and remove the other ones.
+             A cluster has the following parameters:
+
+             className = the fully qualified name of the cluster class
+
+             clusterName = a descriptive name for your cluster, can be anything
+
+             mcastAddr = the multicast address, has to be the same for all the nodes
+
+             mcastPort = the multicast port, has to be the same for all the nodes
+             
+             mcastBindAddress = bind the multicast socket to a specific address
+             
+             mcastTTL = the multicast TTL if you want to limit your broadcast
+             
+             mcastSoTimeout = the multicast readtimeout 
+
+             mcastFrequency = the number of milliseconds in between sending a "I'm alive" heartbeat
+
+             mcastDropTime = the number a milliseconds before a node is considered "dead" if no heartbeat is received
+
+             tcpThreadCount = the number of threads to handle incoming replication requests, optimal would be the same amount of threads as nodes 
+
+             tcpListenAddress = the listen address (bind address) for TCP cluster request on this host, 
+                                in case of multiple ethernet cards.
+                                auto means that address becomes
+                                InetAddress.getLocalHost().getHostAddress()
+
+             tcpListenPort = the tcp listen port
+
+             tcpSelectorTimeout = the timeout (ms) for the Selector.select() method in case the OS
+                                  has a wakup bug in java.nio. Set to 0 for no timeout
+
+             printToScreen = true means that managers will also print to std.out
+
+             expireSessionsOnShutdown = true means that 
+
+             useDirtyFlag = true means that we only replicate a session after setAttribute,removeAttribute has been called.
+                            false means to replicate the session after each request.
+                            false means that replication would work for the following piece of code: (only for SimpleTcpReplicationManager)
+                            <%
+                            HashMap map = (HashMap)session.getAttribute("map");
+                            map.put("key","value");
+                            %>
+             replicationMode = can be either 'pooled', 'synchronous' or 'asynchronous'.
+                               * Pooled means that the replication happens using several sockets in a synchronous way. Ie, the data gets replicated, then the request return. This is the same as the 'synchronous' setting except it uses a pool of sockets, hence it is multithreaded. This is the fastest and safest configuration. To use this, also increase the nr of tcp threads that you have dealing with replication.
+                               * Synchronous means that the thread that executes the request, is also the
+                               thread the replicates the data to the other nodes, and will not return until all
+                               nodes have received the information.
+                               * Asynchronous means that there is a specific 'sender' thread for each cluster node,
+                               so the request thread will queue the replication request into a "smart" queue,
+                               and then return to the client.
+                               The "smart" queue is a queue where when a session is added to the queue, and the same session
+                               already exists in the queue from a previous request, that session will be replaced
+                               in the queue instead of replicating two requests. This almost never happens, unless there is a 
+                               large network delay.
+        -->             
+        <!--
+            When configuring for clustering, you also add in a valve to catch all the requests
+            coming in, at the end of the request, the session may or may not be replicated.
+            A session is replicated if and only if all the conditions are met:
+            1. useDirtyFlag is true or setAttribute or removeAttribute has been called AND
+            2. a session exists (has been created)
+            3. the request is not trapped by the "filter" attribute
+
+            The filter attribute is to filter out requests that could not modify the session,
+            hence we don't replicate the session after the end of this request.
+            The filter is negative, ie, anything you put in the filter, you mean to filter out,
+            ie, no replication will be done on requests that match one of the filters.
+            The filter attribute is delimited by ;, so you can't escape out ; even if you wanted to.
+
+            filter=".*\.gif;.*\.js;" means that we will not replicate the session after requests with the URI
+            ending with .gif and .js are intercepted.
+            
+            The deployer element can be used to deploy apps cluster wide.
+            Currently the deployment only deploys/undeploys to working members in the cluster
+            so no WARs are copied upons startup of a broken node.
+            The deployer watches a directory (watchDir) for WAR files when watchEnabled="true"
+            When a new war file is added the war gets deployed to the local instance,
+            and then deployed to the other instances in the cluster.
+            When a war file is deleted from the watchDir the war is undeployed locally 
+            and cluster wide
+        -->
+        
+        <!--
+        <Cluster className="org.apache.catalina.cluster.tcp.SimpleTcpCluster"
+                 managerClassName="org.apache.catalina.cluster.session.DeltaManager"
+                 expireSessionsOnShutdown="false"
+                 useDirtyFlag="true"
+                 notifyListenersOnReplication="true">
+
+            <Membership 
+                className="org.apache.catalina.cluster.mcast.McastService"
+                mcastAddr="228.0.0.4"
+                mcastPort="45564"
+                mcastFrequency="500"
+                mcastDropTime="3000"/>
+
+            <Receiver 
+                className="org.apache.catalina.cluster.tcp.ReplicationListener"
+                tcpListenAddress="auto"
+                tcpListenPort="4001"
+                tcpSelectorTimeout="100"
+                tcpThreadCount="6"/>
+
+            <Sender
+                className="org.apache.catalina.cluster.tcp.ReplicationTransmitter"
+                replicationMode="pooled"
+                ackTimeout="15000"
+                waitForAck="true"/>
+
+            <Valve className="org.apache.catalina.cluster.tcp.ReplicationValve"
+                   filter=".*\.gif;.*\.js;.*\.jpg;.*\.png;.*\.htm;.*\.html;.*\.css;.*\.txt;"/>
+                   
+            <Deployer className="org.apache.catalina.cluster.deploy.FarmWarDeployer"
+                      tempDir="/tmp/war-temp/"
+                      deployDir="/tmp/war-deploy/"
+                      watchDir="/tmp/war-listen/"
+                      watchEnabled="false"/>
+                      
+            <ClusterListener className="org.apache.catalina.cluster.session.ClusterSessionListener"/>
+        </Cluster>
+        -->        
+
+
+
+        <!-- Normally, users must authenticate themselves to each web app
+             individually.  Uncomment the following entry if you would like
+             a user to be authenticated the first time they encounter a
+             resource protected by a security constraint, and then have that
+             user identity maintained across *all* web applications contained
+             in this virtual host. -->
+        <!--
+        <Valve className="org.apache.catalina.authenticator.SingleSignOn" />
+        -->
+
+        <!-- Access log processes all requests for this virtual host.  By
+             default, log files are created in the "logs" directory relative to
+             $CATALINA_HOME.  If you wish, you can specify a different
+             directory with the "directory" attribute.  Specify either a relative
+             (to $CATALINA_HOME) or absolute path to the desired directory.
+        -->
+        <!--
+        <Valve className="org.apache.catalina.valves.AccessLogValve"
+                 directory="logs"  prefix="localhost_access_log." suffix=".txt"
+                 pattern="common" resolveHosts="false"/>
+        -->
+
+        <!-- Access log processes all requests for this virtual host.  By
+             default, log files are created in the "logs" directory relative to
+             $CATALINA_HOME.  If you wish, you can specify a different
+             directory with the "directory" attribute.  Specify either a relative
+             (to $CATALINA_HOME) or absolute path to the desired directory.
+             This access log implementation is optimized for maximum performance,
+             but is hardcoded to support only the "common" and "combined" patterns.
+        -->
+        <!--
+        <Valve className="org.apache.catalina.valves.FastCommonAccessLogValve"
+                 directory="logs"  prefix="localhost_access_log." suffix=".txt"
+                 pattern="common" resolveHosts="false"/>
+        -->
+<!-- Tomcat Examples Context -->
+<!-- Tomcat Root Context -->
+      </Host>
+
+    </Engine>
+
+  </Service>
+
+</Server>
