@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<datasource>
+  <names>
+    <name>mainportal</name> 
+    <name>portal</name>
+    <name>ehr_schedule</name>
+    <name>etax_tnl</name>
+   
+    <name>ehr_tnl</name>
+    <name>ehr_tnl_ins</name>
+    <name>ehr_mjnmy</name>
+    <name>ehr_acath</name>
+    <name>ehr_ambth</name>
+    <name>ehr_bentlyth</name>
+    <name>ehr_betzth</name>
+    <name>ehr_gectoth</name>
+    <name>ehr_geiocth</name>
+    <name>ehr_geltth</name>
+    <name>ehr_gemstth</name>
+    <name>ehr_mrasth</name>
+    <name>ehr_sipcoth</name>
+    <name>ehr_altairsg</name>
+
+    <name>epayroll_tnl_ins</name>
+    <name>epayroll_tnl</name>
+    <name>epayroll_acath</name>
+    <name>epayroll_ambth</name>
+    <name>epayroll_bentlyth</name>
+    <name>epayroll_betzth</name>
+    <name>epayroll_gectoth</name>
+    <name>epayroll_gehkorii</name>
+    <name>epayroll_geiocth</name>
+    <name>epayroll_geioth</name>
+    <name>epayroll_geltth</name>
+    <name>epayroll_gemstth</name>
+    <name>epayroll_mrasth</name>
+    <name>epayroll_mjnmy</name>
+    <name>epayroll_sipcoth</name>
+    <name>epayroll_altairsg</name>
+
+    <name>etemplate_mjnmy</name>
+    <name>etemplate_acath</name>
+    <name>etemplate_ambth</name>
+    <name>etemplate_bentlyth</name>
+    <name>etemplate_betzth</name>
+    <name>etemplate_gectoth</name>
+    <name>etemplate_geiocth</name>
+    <name>etemplate_geltth</name>
+    <name>etemplate_mrasth</name>
+    <name>etemplate_sipcoth</name>
+    <name>etemplate_tnl_ins</name>
+    <name>etemplate_tnl</name>
+    <name>etemplate_altairsg</name>
+  </names>  
+</datasource>

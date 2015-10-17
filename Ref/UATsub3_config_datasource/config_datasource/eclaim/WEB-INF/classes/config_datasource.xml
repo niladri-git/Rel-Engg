@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!--Need to list the available alias for special processing and email reminders-->
+<datasource>
+  <names>
+	<name>ehr_momentivetw</name>
+	<name>ehr_altairsg</name>
+	<name>ehr_carestreamtw</name>
+	<name>ehr_linkedlnsg</name>
+	<name>ehr_heilindhk</name>
+	<name>ehr_bat2hk</name>
+	<name>ehr_bat1hk</name>
+	<name>ehr_t001sg</name>
+	<name>ehr_t001hk</name>
+	<name>ehr_t001cn</name>
+	<name>ehr_t001tw</name>
+	<name>ehr_t001th</name>
+	<name>ehr_t001my</name>
+	<name>ehr_abchk</name>
+</names>
+</datasource>

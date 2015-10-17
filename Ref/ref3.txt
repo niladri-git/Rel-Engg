@@ -1,0 +1,50 @@
+Debasis mentioned... some schemas setup  for epayslip module...
+
+epayslip/WEB-INF/classes/config_datasource.xml
+
+<name>epayroll_oraclesg</name>
+
+strongly advice, don't memorize......
+
+
+
+damage:
+<name>epayroll_oraclesg</name>
+<name>epayroll_oraclesg</name>
+<name>etax_oraclesg</name>
+
+setup is not necessary...
+it doesn't affect the functionality...
+sometimes... duplication.... causing error...
+
+example:   server.xml
+
+schema_username: ehr_oraclesg
+schema_password:  ehr_oraclesg
+Connected Server:  testsub1
+
+schema_username: ehr_oraclesg
+schema_password:  ehr_oraclesg
+Connected Server:  testsub3
+
+tomcat read from top to bottom....
+bottom one will not be taken effect..... in other word, ignore
+
+
+Caution:
+- NO DUPLICATION
+- Case-sensitive=== LINUX,   ORACLESG is not equal to oraclesg...
+	Foldername = usually BLOCKLETTER
+	schema name = normal small letter
+- no spacing... example:   <name>ehr_oraclesg </name>
+
+
+/usr/FORM/ directory===  storing TAXFORM
+/usr/FORM/ORACLESG/  =====this folder name is BLOCK LETTER
+
+/i-admin/epayslip/ORACLESG/ === payslip directory
+
+/usr/local/tomcat/webapps/epayslip/images/ORACLESG.gif === Company Logo on payslip (Top-Left)
+/usr/local/tomcat/webapps/epayroll/images/ORACLESG.gif === Company Logo on payslip (Top-Left)
+
+by default:  we will insert i-Admin logo.... 

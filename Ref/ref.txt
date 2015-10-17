@@ -1,0 +1,108 @@
+Payadmin Platform (Older platform / Legacy platform)
+=========================
+Java-based
+JSP
+WEb-server = Tomcat
+
+
+
+eHR Platform (Standardization)
+========================
+Since 2007/2008
+
+Module-based
+
+ePayslip module
+ePayroll module
+HRIS / StaffAdmin
+eLeave 
+eClaim
+Calendar module
+eTimesheet === Clock-in/ Clock-Out === low number of clients
+
+eTaxForm module (must have) ==== TH Client, currently we do not have eTaxTH, work about to accomodate TH eTax process
+
+Indonesia TAX process ====> eTaxID == do not have
+india TAX process ==> eTaxIN == currently do not have this 
+
+whereas:
+eTax module === Standardize module, currently SG Client will need this eTAX module
+HK Client: eTaxHK module
+MY Client: eTaxMY module
+CHN Client: eTaxCHN module
+TW Client: eTaxTW module
+
+
+
+Vendor Management === employ company in Indonesia / India,  to process TAX in that region
+once, that vendor has processed,  they will supply TAXForm soft-copy.
+
+hosting this TaxFORM  within  eTaxForm module ===>>
+
+
+
+
+Server's architecture  for eHR platform
+========================================
+1) Live Production server   ==  ehr.i-admin.com ==Portal page,  (few modules:  mainportal, escheduler module, portal module)
+
+Load balancer ===  Most of the modules are here...
+- SUB1
+- SUB2
+- SUB3
+- SUB5
+- SUB6
+
+2) Testing / UAT server === before deploy new codes to production
+
+uatportal.myolabo.com  (Login portal page)
+uatsub1.myolabo.com  (UAT of SUB1)  ====  UATSUB1DB.myolabo.com
+uatsub3.myolabo.com  (UAT of SUB3)  ====  UATSUB1DB.myolabo.com
+
+uatsub2.myolabo.com  (SWD team requested for eInstruction module,  not active much)
+
+
+3) Local Environment Server === hosted in BLR office's Server RACK
+testehr.myolabo.com
+testsub1.myolabo.com === has oracleDB Server running in its own...
+testsub3.myolabo.com 
+
+4) SWD team will have their own laptop machine:  eClipse, Tomcat, OracleDB serve... running on Windows....
+
+
+
+
+
+Setup New Entity on eHR platform
+==================================
+to enable module for Entity / Client
+
+ORACLE = Client
+ORACLESG,  ORACLEMY, ORACLEBJ == entity ID
+
+1) config_datasource.XML   located   /usr/local/tomcat/webapps/<MODULE_NAME>/WEB-INF/classes/config_datasource.xml
+
+schemas name:
+=====================
+- ehr_oraclesg == gateway to communicate with Database schema
+- epayroll_oraclesg
+- etemplate_oraclesg
+- etax_oraclesg
+
+Ad-hoc
+=======
+- etaxchn_oraclebj == Oracle
+- etaxmy_mjnmy  == Mead Johnson
+- etaxmy_mjnmy2  == Mead Johnson  
+
+To add manually:
+===================
+<name>ehr_oraclesg</name> === Employee Information
+<name>etemplate_oraclesg</name> === .... ??? Upload/ Download templatem, batch upload... batch process
+<name>epayroll_oraclesg</name> ==== payItems
+
+
+
+
+
+

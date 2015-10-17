@@ -1,0 +1,299 @@
+        <Resource
+                name="etaxchn_mjngz"
+                auth="Container"
+                type="com.mchange.v2.c3p0.ComboPooledDataSource"
+                factory="org.apache.naming.factory.BeanFactory"
+                user="etaxchn_mjngz"
+                password="etaxchn_mjngzqwsa"
+                driverClass="oracle.jdbc.OracleDriver"
+                jdbcUrl="jdbc:oracle:thin:@testsub1db.myolabo.com:1521:XE"
+                maxIdleTime="60"
+                maxPoolSize="10"
+                minPoolSize="2"
+        acquireIncrement="2"/>
+
+
+Request to Support@OktaRack.com  & cc your supervisor...
+need PLSQL to access database....
+
+
+[root@testsub1 tomcat]# find /usr/local/tomcat/ -type f -name "*.xml" -exec grep mjngz {} \; -print
+
+
+	<name>ehr_mjngz</name>
+	<name>epayroll_mjngz</name>
+	<name>etemplate_mjngz</name>
+/usr/local/tomcat/webapps/reportadmin2/WEB-INF/classes/config_datasource.xml
+
+	<name>ehr_mjngz</name>
+	<name>epayroll_mjngz</name>
+	<name>etemplate_mjngz</name>
+/usr/local/tomcat/webapps/reportadmin2/WEB-INF/src/config_datasource.xml
+
+                <name>etaxchn_mjngz</name>
+					<etaxchn_mjngz>
+							<user>etaxchn_mjngz</user>
+					</etaxchn_mjngz>
+/usr/local/tomcat/webapps/etax/WEB-INF/classes/config_datasource.xml
+
+                <name>etaxchn_mjngz</name>
+<etaxchn_mjngz>
+        <user>etaxchn_mjngz</user>
+        <password>etaxchn_mjngzqwsa</password>
+</etaxchn_mjngz>
+/usr/local/tomcat/webapps/etax/WEB-INF/src/config_datasource.xml
+
+	<name>ehr_mjngz</name>
+	<name>epayroll_mjngz</name>
+	<name>etemplate_mjngz</name>
+/usr/local/tomcat/webapps/calendar/WEB-INF/classes/config_datasource.xml
+
+	<name>ehr_mjngz</name>
+	<name>epayroll_mjngz</name>
+	<name>etemplate_mjngz</name>
+/usr/local/tomcat/webapps/calendar/WEB-INF/src/config_datasource.xml
+
+                <name>ehr_mjngz</name>
+                <name>epayroll_mjngz</name>
+                <name>etemplate_mjngz</name>
+/usr/local/tomcat/webapps/reportadmin/WEB-INF/classes/config_datasource.xml
+
+                <name>ehr_mjngz</name>
+                <name>epayroll_mjngz</name>
+                <name>etemplate_mjngz</name>
+/usr/local/tomcat/webapps/reportadmin/WEB-INF/src/config_datasource.xml
+
+	<name>ehr_mjngz</name>
+	<name>epayroll_mjngz</name>
+	<name>etemplate_mjngz</name>
+/usr/local/tomcat/webapps/remoteuser2/WEB-INF/classes/config_datasource.xml
+
+	<name>ehr_mjngz</name>
+	<name>epayroll_mjngz</name>
+	<name>etemplate_mjngz</name>
+/usr/local/tomcat/webapps/remoteuser2/WEB-INF/src/config_datasource.xml
+
+	<name>ehr_mjngz</name>
+	<name>epayroll_mjngz</name>
+	<name>etemplate_mjngz</name>
+/usr/local/tomcat/webapps/leave/WEB-INF/classes/config_datasource.xml
+
+	<name>ehr_mjngz</name>
+	<name>epayroll_mjngz</name>
+	<name>etemplate_mjngz</name>
+/usr/local/tomcat/webapps/leave/WEB-INF/src/config_datasource.xml
+
+	<name>ehr_mjngz</name>
+	<name>epayroll_mjngz</name>
+	<name>etemplate_mjngz</name>
+/usr/local/tomcat/webapps/leave-29Jan2015/WEB-INF/classes/config_datasource.xml
+
+	<name>ehr_mjngz</name>
+	<name>epayroll_mjngz</name>
+	<name>etemplate_mjngz</name>
+/usr/local/tomcat/webapps/hris2/WEB-INF/classes/config_datasource.xml
+
+	<name>ehr_mjngz</name>
+	<name>epayroll_mjngz</name>
+	<name>etemplate_mjngz</name>
+/usr/local/tomcat/webapps/hris2/WEB-INF/src/config_datasource.xml
+
+	<name>ehr_mjngz</name>
+	<name>epayroll_mjngz</name>
+	<name>etemplate_mjngz</name>
+/usr/local/tomcat/webapps/etemplate/WEB-INF/classes/config_datasource.xml
+
+	<name>ehr_mjngz</name>
+	<name>epayroll_mjngz</name>
+	<name>etemplate_mjngz</name>
+/usr/local/tomcat/webapps/etemplate/WEB-INF/src/config_datasource.xml
+
+	<name>ehr_mjngz</name>
+	<name>epayroll_mjngz</name>
+	<name>etemplate_mjngz</name>
+/usr/local/tomcat/webapps/leave2/WEB-INF/classes/config_datasource.xml
+
+	<name>ehr_mjngz</name>
+	<name>epayroll_mjngz</name>
+	<name>etemplate_mjngz</name>
+/usr/local/tomcat/webapps/leave2/WEB-INF/src/config_datasource.xml
+
+	<name>ehr_mjngz</name>
+	<name>epayroll_mjngz</name>
+	<name>etemplate_mjngz</name>
+/usr/local/tomcat/webapps/portal/WEB-INF/classes/config_datasource.xml
+
+	<name>ehr_mjngz</name>
+	<name>epayroll_mjngz</name>
+	<name>etemplate_mjngz</name>
+/usr/local/tomcat/webapps/portal/WEB-INF/src/config_datasource.xml
+
+        <name>etaxchn_mjngz</name>
+/usr/local/tomcat/webapps/etaxform/WEB-INF/classes/config_datasource.xml
+
+        <name>etaxchn_mjngz</name>
+/usr/local/tomcat/webapps/etaxform/WEB-INF/src/config_datasource.xml
+
+	<name>ehr_mjngz</name>
+	<name>epayroll_mjngz</name>
+	<name>etemplate_mjngz</name>
+/usr/local/tomcat/webapps/epayslip/WEB-INF/classes/config_datasource.xml
+
+	<name>ehr_mjngz</name>
+	<name>epayroll_mjngz</name>
+	<name>etemplate_mjngz</name>
+/usr/local/tomcat/webapps/epayslip/WEB-INF/src/config_datasource.xml
+
+	<name>ehr_mjngz</name>
+	<name>epayroll_mjngz</name>
+	<name>etemplate_mjngz</name>
+/usr/local/tomcat/webapps/epayroll/WEB-INF/classes/config_datasource.xml
+
+	<name>ehr_mjngz</name>
+	<name>epayroll_mjngz</name>
+	<name>etemplate_mjngz</name>
+	<name>etaxchn_mjngz</name>
+/usr/local/tomcat/webapps/epayroll/WEB-INF/src/config_datasource.xml
+
+	<name>ehr_mjngz</name>
+	<name>epayroll_mjngz</name>
+	<name>etemplate_mjngz</name>
+/usr/local/tomcat/webapps/epayroll/WEB-INF/classes_epayroll/config_datasource.xml
+
+	<name>ehr_mjngz</name>
+	<name>epayroll_mjngz</name>
+	<name>etemplate_mjngz</name>
+/usr/local/tomcat/webapps/oldeleave/WEB-INF/classes/config_datasource.xml
+
+	<name>ehr_mjngz</name>
+	<name>epayroll_mjngz</name>
+	<name>etemplate_mjngz</name>
+/usr/local/tomcat/webapps/oldeleave/WEB-INF/src/config_datasource.xml
+
+	<name>ehr_mjngz</name>
+	<name>epayroll_mjngz</name>
+	<name>etemplate_mjngz</name>
+/usr/local/tomcat/webapps/user/WEB-INF/classes/config_datasource.xml
+
+	<name>ehr_mjngz</name>
+	<name>epayroll_mjngz</name>
+	<name>etemplate_mjngz</name>
+/usr/local/tomcat/webapps/user/WEB-INF/src/config_datasource.xml
+
+	<name>ehr_mjngz</name>
+	<name>epayroll_mjngz</name>
+	<name>etemplate_mjngz</name>
+/usr/local/tomcat/webapps/user2/WEB-INF/classes/config_datasource.xml
+
+	<name>ehr_mjngz</name>
+	<name>epayroll_mjngz</name>
+	<name>etemplate_mjngz</name>
+/usr/local/tomcat/webapps/user2/WEB-INF/src/config_datasource.xml
+
+	<name>ehr_mjngz</name>
+	<name>epayroll_mjngz</name>
+	<name>etemplate_mjngz</name>
+/usr/local/tomcat/webapps/epayroll2/epayroll/WEB-INF/classes/config_datasource.xml
+
+	<name>ehr_mjngz</name>
+	<name>epayroll_mjngz</name>
+	<name>etemplate_mjngz</name>
+/usr/local/tomcat/webapps/epayroll2/WEB-INF/classes/config_datasource.xml
+
+	<name>ehr_mjngz</name>
+	<name>epayroll_mjngz</name>
+	<name>etemplate_mjngz</name>
+/usr/local/tomcat/webapps/epayroll2/WEB-INF/src/config_datasource.xml
+
+	<name>ehr_mjngz</name>
+	<name>epayroll_mjngz</name>
+	<name>etemplate_mjngz</name>
+/usr/local/tomcat/webapps/remoteuser/WEB-INF/classes/config_datasource.xml
+
+	<name>ehr_mjngz</name>
+	<name>epayroll_mjngz</name>
+	<name>etemplate_mjngz</name>
+/usr/local/tomcat/webapps/remoteuser/WEB-INF/src/config_datasource.xml
+
+	<name>ehr_mjngz</name>
+	<name>epayroll_mjngz</name>
+	<name>etemplate_mjngz</name>
+/usr/local/tomcat/webapps/leave-27Jan2015-withYOS/WEB-INF/classes/config_datasource.xml
+
+	<name>ehr_mjngz</name>
+	<name>epayroll_mjngz</name>
+	<name>etemplate_mjngz</name>
+/usr/local/tomcat/webapps/leave-27Jan2015-withYOS/WEB-INF/src/config_datasource.xml
+
+	<name>ehr_mjngz</name>
+	<name>epayroll_mjngz</name>
+	<name>etemplate_mjngz</name>
+/usr/local/tomcat/webapps/epayslip2/WEB-INF/classes/config_datasource.xml
+
+	<name>ehr_mjngz</name>
+	<name>epayroll_mjngz</name>
+	<name>etemplate_mjngz</name>
+/usr/local/tomcat/webapps/epayslip2/WEB-INF/src/config_datasource.xml
+
+	<name>ehr_mjngz</name>
+	<name>epayroll_mjngz</name>
+	<name>etemplate_mjngz</name>
+/usr/local/tomcat/webapps/portal2/WEB-INF/classes/config_datasource.xml
+
+	<name>ehr_mjngz</name>
+	<name>epayroll_mjngz</name>
+	<name>etemplate_mjngz</name>
+/usr/local/tomcat/webapps/portal2/WEB-INF/src/config_datasource.xml
+
+	<name>ehr_mjngz</name>
+	<name>epayroll_mjngz</name>
+	<name>etemplate_mjngz</name>
+/usr/local/tomcat/webapps/hris/WEB-INF/classes/config_datasource.xml
+
+	<name>ehr_mjngz</name>
+	<name>epayroll_mjngz</name>
+	<name>etemplate_mjngz</name>
+/usr/local/tomcat/webapps/hris/WEB-INF/src/config_datasource.xml
+
+                global="ehr_mjngz"
+                name="ehr_mjngz"
+                global="epayroll_mjngz"
+                name="epayroll_mjngz"
+                global="etemplate_mjngz"
+                name="etemplate_mjngz"
+                global="etaxchn_mjngz"
+                name="etaxchn_mjngz"
+/usr/local/tomcat/conf/context.xml
+
+                name="ehr_mjngz"
+                user="ehr_mjngz"
+                password="ehr_mjngzqwsa"
+                name="epayroll_mjngz"
+                user="epayroll_mjngz"
+                password="epayroll_mjngzqwsa"
+                name="etemplate_mjngz"
+                user="etemplate_mjngz"
+                password="etemplate_mjngzqwsa"
+                name="etaxchn_mjngz"
+                user="etaxchn_mjngz"
+                password="etaxchn_mjngzqwsa"
+/usr/local/tomcat/conf/server.xml
+
+
+
+DESIGN of eHR platform
+-==================================
+1) testehr.myolabo.com   ==== oracledb  in testsub1.myolabo.com == testsub1db.myolabo.com
+
+Database === table   mainportal.CLIENT_USER  ==  DBI team will define  whether to redirect to UATSUB1 or UATSUB3
+
+2) Back to the request from Tester,   testing epayslip coding enhancement ==== UATSUB1...
+client setting is available in UATSUB1
+
+
+when you run checking.... MJNBJ === not available yet in UYATSUB1...
+request in email  to create MJNBJ  in UATSUB1
+
+
+
+

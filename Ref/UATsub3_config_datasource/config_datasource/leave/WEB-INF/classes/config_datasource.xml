@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+
+<!--Need to list the available alias for special processing and email reminders-->
+
+<datasource>
+  
+<names>
+    
+<name>mainportal</name>
+<name>ehr_tnl_ins</name>
+<name>ehr_momentivehk</name>
+<name>ehr_momentivetw</name>
+<name>ehr_carestreamtw</name>
+<name>ehr_bathk</name>
+<name>ehr_batcn</name>
+<name>ehr_battw</name>
+<name>ehr_eastportsg5</name>
+<name>ehr_linkedlnsg</name>
+<name>ehr_jdsumy</name>
+<name>ehr_mjnmy</name>
+<name>ehr_bat2hk</name>
+<name>ehr_altairsg</name>
+<name>ehr_verticurlusa</name>
+<name>ehr_bat1hk</name>
+<name>ehr_abhk</name>
+<name>ehr_scbhk</name>
+<name>ehr_t001sg</name>
+<name>ehr_t001hk</name>
+<name>ehr_t001cn</name>
+<name>ehr_t001tw</name>
+<name>ehr_t001th</name>
+<name>ehr_t001my</name>
+<name>ehr_sepuramy</name>
+
+	<name>ehr_abhk</name>
+	<name>ehr_absg</name>
+	<name>ehr_abhk</name>
+</names>
+
+<!-- please add new datasources in tomcat/conf/context.xml and add names here-->
+
+</datasource>

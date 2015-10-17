@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<datasource>
+  <names>
+    <name>etaxtw_carestreamtw</name>
+    <name>epayroll_carestreamtw</name>
+    <name>ehr_carestreamtw</name>
+    <name>etaxtw_avantortw</name>
+    <name>epayroll_avantortw</name>
+    <name>ehr_avantortw</name>
+  </names>  
+</datasource>

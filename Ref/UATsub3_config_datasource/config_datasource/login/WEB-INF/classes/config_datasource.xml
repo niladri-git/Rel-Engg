@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!--Need to list the available alias for special processing and email reminders-->
+<datasource>
+  <names>
+    <name>portal</name>
+    <name>mainportal</name>
+    <name>adpportal</name>
+  </names>
+  <datasources>
+    
+  </datasources>
+</datasource>

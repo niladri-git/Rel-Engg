@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<datasource>
+  <names>
+	<name>epayroll_linkedlnsg</name>
+	<name>etaxhk_linkedlnsg</name>
+	<name>ehr_lenovohk</name>
+	<name>epayroll_lenovohk</name>
+	<name>etaxhk_lenovohk</name>
+	<name>epayroll_caesarshk</name>
+	<name>etaxhk_caesarshk</name>
+	<name>epayroll_bat1hk</name>
+	<name>etaxhk_bat1hk</name>
+	<name>etaxhk_scbhk</name>
+	<name>epayroll_scbhk</name>
+	<name>etaxhk_abhk</name>
+	<name>epayroll_abhk</name>
+  </names>  
+</datasource>

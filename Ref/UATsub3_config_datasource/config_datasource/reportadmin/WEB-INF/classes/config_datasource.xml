@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<datasource>
+  <names>
+    <name>portal</name>
+    <name>mainportal</name>
+    <name>reportadmin</name>
+    <name>epayroll_tnl</name>
+    <name>ehr_tnl</name>
+    <name>ehr_schedule</name>
+    <name>ehr_tnl</name>
+    <name>epayroll_tnl</name>
+	<name>epayroll_altairsg</name>
+	<name>epayroll_oraclemy</name>
+	<name>epayroll_abchk</name>
+	<name>epayroll_testingkr</name>
+	<name>epayroll_bthk</name>
+	<name>epayroll_testingkr</name>
+<name>ehr_testingkr</name>
+	<name>epayroll_wdsg</name>
+        <name>ehr_wdsg</name>
+        <name>epayroll_wdsg2</name>
+        <name>ehr_wdsg2</name>
+        <name>epayroll_wdhk</name>
+        <name>ehr_wdhk</name>
+        <name>epayroll_wdhk2</name>
+        <name>ehr_wdhk2</name>
+        <name>epayroll_wdsg3</name>
+        <name>ehr_wdsg3</name>
+	<name>epayroll_abctw</name>
+	<name>epayroll_abchk</name>
+	<name>epayroll_abcch</name>
+	<name>epayroll_momentivehk</name>
+	<name>ehr_momentivehk</name>
+        <name>epayroll_rimth</name>
+        <name>ehr_rimth</name>
+        <name>epayroll_mjnth</name>
+        <name>ehr_mjnth</name>
+	<name>epayroll_mjnmy</name>
+        <name>ehr_mjnmy</name>
+        <name>epayroll_gehkorms</name>
+        <name>ehr_gehkorms</name>
+        <name>epayroll_hermeshk</name>
+        <name>ehr_hermeshk</name>
+ 	<name>ehr_mjngz</name>
+	<name>epayroll_mjngz</name>
+	<name>ehr_bathk</name>
+	<name>epayroll_bathk</name>
+	<name>ehr_carestreamtw</name>
+	<name>epayroll_carestreamtw</name>
+        <name>epayroll_uhra2th</name>
+        <name>ehr_uhra2th</name>
+	<name>epayroll_lenovomy</name>
+        <name>ehr_lenovomy</name>
+	<name>epayroll_gectoth</name>
+	<name>ehr_gectoth</name>
+	<name>ehr_sccn</name>
+	<name>epayroll_sccn</name>
+	<name>epayroll_linkedlnsg</name>
+	<name>ehr_batcn</name>
+	<name>epayroll_batcn</name>
+	<name>epayroll_battw</name>
+	<name>ehr_battw</name>
+	<name>epayroll_rimsg</name>
+	<name>ehr_rimsg</name>
+	<name>epayroll_bat2hk</name>
+        <name>ehr_bat2hk</name>
+	<name>ehr_bat3hk</name>
+	<name>epayroll_bat3hk</name>
+	<name>ehr_bat1hk</name>
+	<name>epayroll_bat1hk</name>
+	<name>ehr_abhk</name>
+	<name>epayroll_abhk</name>
+	<name>ehr_scbhk</name>
+	<name>epayroll_scbhk</name>
+	<name>ehr_t001sg</name>
+	<name>epayroll_t001sg</name>
+	<name>ehr_t001hk</name>
+	<name>epayroll_t001hk</name>
+	<name>ehr_t001cn</name>
+	<name>epayroll_t001cn</name>
+	<name>ehr_t001tw</name>
+	<name>epayroll_t001tw</name>
+	<name>ehr_t001th</name>
+	<name>epayroll_t001th</name>
+	<name>ehr_t001my</name>
+	<name>epayroll_t001my</name>
+	<name>ehr_sepuramy</name>
+	<name>epayroll_sepuramy</name>
+	<name>ehr_absg</name>
+	<name>epayroll_absg</name>
+	<name>ehr_avantortw</name>
+        <name>epayroll_avantortw</name>
+	<name>ehr_swissre2sg</name>
+	<name>epayroll_swissre2sg</name>
+	<name>ehr_altairsg</name>
+        <name>epayroll_altairsg</name>
+	
+
+	<name>ehr_coatsth</name>
+	<name>epayroll_coatsth</name>
+	<name>ehr_opentextbj</name>
+	<name>epayroll_opentextbj</name>
+	<name>ehr_opentextcn</name>
+	<name>epayroll_opentextcn</name>
+	<name>ehr_amexth</name>
+	<name>epayroll_amexth</name>
+	<name>ehr_edwardstw</name>
+	<name>epayroll_edwardstw</name>
+	<name>ehr_premieremy</name>
+	<name>epayroll_premieremy</name>
+ <name>etax_oraclesg</name>
+	<name>ehr_bradyhk</name>
+	<name>epayroll_bradyhk</name>
+	<name>ehr_sabrehk</name>
+	<name>epayroll_sabrehk</name>
+	<name>ehr_verticurlaus</name>
+	<name>epayroll_verticurlaus</name>
+<name>ehr_bmshk</name>
+<name>epayroll_bmshk</name>
+<name>etax_absg</name>
+  </names> 
+<datasources>
+<etax_oraclesg>
+        <driver>oracle.jdbc.driver.OracleDriver</driver>
+        <url>jdbc:oracle:thin:@uatsub1db.myolabo.com:1521:xe</url>
+        <user>etax_oraclesg</user>
+        <password>etax_oraclesg***MASKED***</password>
+        <min_pool_size>1</min_pool_size>
+        <max_pool_size>5</max_pool_size>
+        <acquire_increment>2</acquire_increment>
+</etax_oraclesg>
+<etax_absg>
+        <driver>oracle.jdbc.driver.OracleDriver</driver>
+        <url>jdbc:oracle:thin:@uatsub1db.myolabo.com:1521:xe</url>
+        <user>etax_absg</user>
+        <password>etax_absg***MASKED***</password>
+        <min_pool_size>1</min_pool_size>
+        <max_pool_size>10</max_pool_size>
+        <acquire_increment>2</acquire_increment>
+</etax_absg>
+<reportadmin>
+        <driver>oracle.jdbc.driver.OracleDriver</driver>
+        <url>jdbc:oracle:thin:@uatsub1db.myolabo.com:1521:xe</url>
+        <user>reportadmin</user>
+        <password>reportadmin***MASKED***</password>
+        <min_pool_size>1</min_pool_size>
+        <max_pool_size>10</max_pool_size>
+        <acquire_increment>2</acquire_increment>
+</reportadmin>
+</datasources>
+ 
+</datasource>
