@@ -1,0 +1,76 @@
+testehr
+============
+
+
+GC --- Mon Oct 19 17:12:01 SGT 2015
+
+language in loginen
+in login from sessioni18n_en
+[/mainlogin] Catalog Framework -     /mainlogin=module:MultiSupport/ cmd:null
+in usersession)lang--->i18n_null
+in usersession=====>null
+===beforeModule===
+Multiple>>>>>>>>>>>>>>>>>en
+1. Error setting attribute: LANG
+('318','787898','100026','100025','108','883','246','787891','100024','1138','100023','100020','100019','787893','369','787897','869')
+NULL detected by public void com.iadmin.login.dao.ClientBean.setCITY_CODE(java.lang.String)
+NULL detected by public void com.iadmin.login.dao.ClientBean.setCITY_CODE(java.lang.String)
+Month:::OCTOBER  date19    year::::::::: 2015 17:12:19
+===afterModule===
+Time taken in module:0 sec
+goto=/WEB-INF/jsp/login/multi_access.jsp
+Language in multi_access:::::i18n_en
+Language in multi_access1:::::null
+
+################################################################
+Mon Oct 19 17:13:00 SGT 2015#########################################################
+ehr_schedule connection successfully (filter job)
+17:13
+ehr_schedule connection successfully (reminder job)
+ehr_abchk connection successfully (filter job)
+ehr_abchk connection successfully (reminder job)
+ABCHK has finished the handling
+Cannot get context: Naming Exception:
+ABCHK has been filtered successfully
+Cannot get context: Naming Exception:
+
+GC --- Mon Oct 19 17:13:01 SGT 2015
+
++++
+
+testsub1
+======================
+
+[/login] Catalog Framework -     /login=module:PortalRedirect/ cmd:null
+in usersession)lang--->i18n_ZW4=
+in usersession=====>ZW4=
+===beforeModule===
+Language in PortalRedirect:en
+Username2 : CLIENTREMOTE
+Username3 : CLIENTREMOTE
+mainportalinfo is: testehr.myolabo.com##mainportal
+infosql_updatedSELECT LAST_IPADDR,TO_CHAR(LAST_LOGINTIME, 'DD ') DD,TO_CHAR(LAST_LOGINTIME, 'MONTH') MONTH ,TO_CHAR(LAST_LOGINTIME, ' YYYY HH24:MI:SS')YEAR_TIME,TO_CHAR(LAST_LOGINTIME, 'DD MONTHYYYY HH24:MI:SS',  'NLS_DATE_LANGUAGE = ENGLISH') LOGIN_TIME  FROM USERS WHERE USER_NAME = ?
+Login->>>>success.jsp language**************************en===afterModule===
+Time taken in module:0 sec
+[/login] Catalog Framework -     Catalog called without any next actions
+ >> This request from subportal!! <<
+ssl.trustAllHostNames is found!
+ssl.trustAllHttpsCertificates is found!
+url=https://testsub1.myolabo.com/login/serviceValidate?service=https%3A%2F%2Ftestsub1.myolabo.com%2Fportal%2Fcatalog%3Fmodule%3DLogin%26from%3Dlogin%26gid%3DNjAyNA%3D%3D%26CL%3D814%26UL%3D618%26mt%3DM%26lang%3Den&ticket=ST-27-zmozFhYq4INGz4yyENgb
+At UserTaskFilter
+InCompatibleType=> value from DB:class java.math.BigDecimal / type in Bean:class java.lang.String
+Login page language:ZW4=
+at teh first in lodin access==>client_hr
+poolname=>portal
+Redirecting...
+Time taken in module:0 sec
+At UserTaskFilter
+in filteri18n_en
+user language in main menuen
+ language in main menuen
+ereg status====>1
+SETTING LANGUAGE
+Time taken in module:0 sec
+goto=/WEB-INF/jsp/portal/menu/usermenu.jsp
+Section parameter
+**************************************** new claim :  -> 0
