@@ -1,0 +1,5 @@
+$ mvn clean package tomcat:redeploy
+
+$ mvn tomcat:redeploy
+
+http://localhost:8080/MavenWeb/
